@@ -1,0 +1,3 @@
+---
+title: "Inverse Trigonometric Functions"
+---

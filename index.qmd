@@ -1,5 +1,11 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This website is a development in progress to serve as an open-access mathematical compendium covering mathematical topics fundamental for any student of economics. 
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Version 0.0 of this resource is to include Trigonometry, Calculus I, Calculus II, and applications of such topics in the context of Economics.
+
+This resource is designed for long-term expansion across additional, related subjects that will build upon the necessary, basic principles that Version 0.0 introduces.
+
+Since this is an independent project that is following concurrently with my own studies, I'd like to ask that you please pardon the ongoing construction. All errors are my own.
+
+

@@ -2,14 +2,26 @@ project:
   type: book
 
 book:
-  title: "math_compendium"
-  author: "Norah Jones"
-  date: "6/29/2026"
+  title: "Mathematical Foundations for Economics Students"
+  author: "Isabella García"
+  date: today
   chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - index.qmd #landing/preface page
+    - part: "Trigonometry"
+      chapters:
+        - trig/basics.qmd
+        - trig/identities.qmd
+        - trig/inverse_trig.qmd
+    - part: "Calculus I"
+      chapters:
+        - cal1/derivatives.qmd
+    - part: "Calculus II"
+      chapters:
+        - cal2/integration_techniques.qmd
+    - part: "Mathematical Economics"
+      chapters:
+        - econ/optimization.qmd
+        - econ/supply_demand.qmd
 
 bibliography: references.bib
 
