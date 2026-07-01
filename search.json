@@ -2,41 +2,33 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "math_compendium",
+    "title": "Mathematical Foundations for Economics Students",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "Preface\nThis website is a development in progress to serve as an open-access mathematical compendium covering mathematical topics fundamental for any student of economics.\nVersion 0.0 of this resource is to include Trigonometry, Calculus I, Calculus II, and applications of such topics in the context of Economics.\nThis resource is designed for long-term expansion across additional, related subjects that will build upon the necessary, basic principles that Version 0.0 introduces.\nSince this is an independent project that is following concurrently with my own studies, I’d like to ask that you please pardon the ongoing construction. All errors are my own.",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "trig/basics.html",
+    "href": "trig/basics.html",
+    "title": "1  Basics of Trigonometry",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 The Three Primary Functions\nIn mathematics, there are six fundamental trigonometric functions. For simplicity, we will begin with the three primary functions to establish the basic framework and then introduce their reciprocals later on. The three primary functions are as follows with their classic mnemonic for easy recall. \\[\n\\begin{array}{ccc}\n\\textbf{SOH} & \\textbf{CAH} & \\textbf{TOA} \\\\[6pt]\n\\sin\\theta = \\dfrac{\\text{opp}}{\\text{hyp}} &\n\\cos\\theta = \\dfrac{\\text{adj}}{\\text{hyp}} &\n\\tan\\theta = \\dfrac{\\text{opp}}{\\text{adj}}\n\\end{array}\n\\]\nSine, cosine, and tangent compare the angles of a right triangle to the ratios of its side lengths. The pythagorean theorem, \\(a^2 + b^2 = c^2\\), finds missing sides of a right triangle, with \\(a\\) being the side opposite from the angle, \\(b\\) being the side next to the angle, and \\(c\\) being the hypotenuse, or the longest side. Because of this connection, we can similarly write the three primary functions as: \\[\n\\sin\\theta = \\frac{a}{c} \\qquad\n\\cos\\theta = \\frac{b}{c} \\qquad\n\\tan\\theta = \\frac{a}{b}\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Trigonometry",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basics of Trigonometry</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "objectID": "trig/basics.html#the-unit-circle",
+    "href": "trig/basics.html#the-unit-circle",
+    "title": "1  Basics of Trigonometry",
+    "section": "1.2 The Unit Circle",
+    "text": "1.2 The Unit Circle\nThe unit circle is a circle of radius \\(r = 1\\) centered at the origin of the Cartesian plane. It is the foundation of trigonometry and, by extension, of much of calculus.\nFor any angle \\(\\theta\\) measured counterclockwise from the positive \\(x\\)-axis, the corresponding point on the unit circle is:\n\\[\n(\\cos\\theta,\\ \\sin\\theta)\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
+      "Trigonometry",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basics of Trigonometry</span>"
     ]
   }
 ]
