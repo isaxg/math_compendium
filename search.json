@@ -30,5 +30,27 @@
       "Trigonometry",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basics of Trigonometry</span>"
     ]
+  },
+  {
+    "objectID": "cal1/derivatives.html",
+    "href": "cal1/derivatives.html",
+    "title": "4  Introduction to Derivatives",
+    "section": "",
+    "text": "4.1 Derivatives\nA derivative measures the instantaneous rate of change of a function. At any given point, the derivative is the slope of the line tangent to that point.",
+    "crumbs": [
+      "Calculus I",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Derivatives</span>"
+    ]
+  },
+  {
+    "objectID": "cal1/derivatives.html#differentiation-rules",
+    "href": "cal1/derivatives.html#differentiation-rules",
+    "title": "4  Introduction to Derivatives",
+    "section": "4.2 Differentiation Rules",
+    "text": "4.2 Differentiation Rules\n\\[\n\\frac{d}{dx}(a)=0\n\\] \\[\n\\frac{d}{dx}(x^n)=nx^{n-1}\n\\] \\[\n\\frac{d}{dx}(e^x)=e^x\n\\] \\[\n\\frac{d}{dx}(a^x)=a^x \\ln(a)\n\\] \\[\n\\frac{d}{dx}(\\ln(x))=\\frac{1}{x}\n\\] \\[\n\\frac{d}{dx}(\\log_a x)=\\frac{1}{x}\\cdot\\frac{1}{\\ln(a)}\n\\] \\[\n\\frac{d}{dx}(\\sin(x))=\\cos(x)\n\\] \\[\n\\frac{d}{dx}(\\cos(x))=-\\sin(x)\n\\] \\[\n\\frac{d}{dx}(\\tan(x))=\\sec^2(x)\n\\] \\[\n\\frac{d}{dx}(\\sec(x))=\\sec(x)\\tan(x)\n\\] \\[\n\\frac{d}{dx}(\\csc(x))=-\\csc(x)\\cot(x)\n\\] \\[\n\\frac{d}{dx}(\\cot(x))=-\\csc^2(x)\n\\]",
+    "crumbs": [
+      "Calculus I",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Derivatives</span>"
+    ]
   }
 ]
