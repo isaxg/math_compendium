@@ -1,3 +1,45 @@
 ---
-title: "Derivatives"
+title: "Introduction to Derivatives"
 ---
+## Derivatives
+A derivative measures the instantaneous rate of change of a function. At any given point, the derivative is the slope of the line tangent to that point. 
+
+## Differentiation Rules
+
+$$
+\frac{d}{dx}(a)=0
+$$
+$$
+\frac{d}{dx}(x^n)=nx^{n-1}
+$$
+$$
+\frac{d}{dx}(e^x)=e^x
+$$
+$$
+\frac{d}{dx}(a^x)=a^x \ln(a)
+$$
+$$
+\frac{d}{dx}(\ln(x))=\frac{1}{x}
+$$
+$$
+\frac{d}{dx}(\log_a x)=\frac{1}{x}\cdot\frac{1}{\ln(a)}
+$$
+$$
+\frac{d}{dx}(\sin(x))=\cos(x)
+$$
+$$
+\frac{d}{dx}(\cos(x))=-\sin(x)
+$$
+$$
+\frac{d}{dx}(\tan(x))=\sec^2(x)
+$$
+$$
+\frac{d}{dx}(\sec(x))=\sec(x)\tan(x)
+$$
+$$
+\frac{d}{dx}(\csc(x))=-\csc(x)\cot(x)
+$$
+$$
+\frac{d}{dx}(\cot(x))=-\csc^2(x)
+$$
+
