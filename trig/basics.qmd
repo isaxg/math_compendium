@@ -14,7 +14,7 @@ $$
 \end{array}
 $$
 
-Sine, cosine, and tangent compare the angles of a right triangle to the ratios of its side lengths. The pythagorean theorem, $a^2 + b^2 = c^2$, finds missing sides of a right triangle, with $a$ being the side opposite from the angle, $b$ being the side next to the angle, and $c$ being the hypotenuse, or the longest side. Because of this connection, we can similarly write the three primary functions as:
+You can think of sine, cosine, and tangent as ratios that answer a very specific question: given an angle $\theta$, what are the proportions of the sides of any right triangle that contains that angle? It doesn't matter how large or small the triangle is. For example, the ratio of opposite to hypotenuse is always the same number: $\sin\theta$. These functions don't give us side lengths, but rather, a ratio that is fixed to that angle. Essentially, sine, cosine, and tangent are a way to encode the shape of a triangle using a single number, the angle. The pythagorean theorem, $a^2 + b^2 = c^2$, finds missing sides of a right triangle, with $a$ being the side opposite from the angle, $b$ being the side next to the angle, and $c$ being the hypotenuse, or the longest side. Because of this connection, we can similarly write the three primary functions as:
 $$
 \sin\theta = \frac{a}{c} \qquad
 \cos\theta = \frac{b}{c} \qquad
@@ -27,7 +27,7 @@ It's important to discuss the units we use when measuring angles. Angles can be 
 $$
 \text{Radian} = \frac{\text{distance traveled}}{\text{radius}}
 $$
-Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.
+Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle (i.e., arc length) by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.
 
 To convert from degrees to radians, where $\theta$ is an angle;
 $$
@@ -40,42 +40,34 @@ $$
 
 ## Special Right Triangles
 
-Special right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.
+Special right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. There are two special right triangles: the 30-60-90 and the 45-45-90. These are special because they are the only angles where the ratios come out as clean, exact numbers. Its helpful to think of them as geometric proofs of the ratios and not just a memory device. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.
 
 ### Special Right Triangle #1: 30-60-90
+The first special right triangle has a base length of 1, a height of $\sqrt{3}$, and a hypotenuse of 2. Its smallest angle measures $\frac{\pi}{6}$ degrees and the remaining angle measures $\frac{\pi}{3}$ degrees. Below are the evaluations of sine, cosine, and tangent for the given angles:
+
 :::: {.columns}
 
-::: {.column width="70%"}
-The first special right triangle has a base length of 1, a height of 2, and a hypotenuse of $\sqrt{3}$. Its smallest angle measures $\frac{\pi}{6}$ degrees and the remaining angle measures $\frac{\pi}{3}$ degrees. 
+:::{.column width="60%"}
+$$
+\sin\!\left(\frac{\pi}{6}\right) = \dfrac{\text{opp}}{\text{hyp}} = \frac{1}{2} \qquad
+\sin\!\left(\frac{\pi}{3}\right) = \dfrac{\text{opp}}{\text{hyp}} = \frac{\sqrt3}{2}
+$$
+$$
+\cos\!\left(\frac{\pi}{6}\right) = \dfrac{\text{adj}}{\text{hyp}} = \frac{\sqrt{3}}{2} \qquad
+\cos\!\left(\frac{\pi}{3}\right) = \dfrac{\text{adj}}{\text{hyp}} = \frac{1}{2}
+$$
+$$
+\tan\!\left(\frac{\pi}{6}\right) = \dfrac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt3} \qquad
+\tan\!\left(\frac{\pi}{3}\right) = \dfrac{\text{opp}}{\text{adj}} = \frac{\sqrt3}{1}
+$$
 
-
-:::
-
-:::{.column width="50%"}
-$$
-\begin{array}{cc}
-\sin(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{1}{2} &
-\sin(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{\sqrt3}{2} &
-\end{array}
-$$
-$$
-\begin{array}{cc}
-\cos(\frac{\pi}{6}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{\sqrt3}{2}
-\cos(\frac{\pi}{3}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{1}{2}
-\end{array}
-$$
-$$
-\begin{array}{cc}
-\tan(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt3}
-\tan(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{adj}} = \frac{\sqrt3}{1}
-\end{array}
-$$
+Think of these evaluations as a way of "looking up" the ratio that corresponds to the angle. It doesn't matter if the hypotenuse is 1 centimeter or 1 kilometer, in any right triangle where one angle is $\frac{\pi}{3}$, for example, the fraction of the hypotenuse that is the adjacent side will always be exactly half. There is no arithmetic being done or formula we are plugging values into. These evaluations read a geometric fact because these ratios will hold for the specified angle no matter what. 
 :::
 
 ::: {.column width="1%"}
 :::
 
-::: {.column width="40%"}
+::: {.column width="39%"}
 ```{python}
 #| echo: false
 import matplotlib.pyplot as plt
