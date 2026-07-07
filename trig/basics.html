@@ -283,7 +283,7 @@ window.Quarto = {
 \tan\theta = \dfrac{\text{opp}}{\text{adj}}
 \end{array}
 \]</span></p>
-<p>Sine, cosine, and tangent compare the angles of a right triangle to the ratios of its side lengths. The pythagorean theorem, <span class="math inline">\(a^2 + b^2 = c^2\)</span>, finds missing sides of a right triangle, with <span class="math inline">\(a\)</span> being the side opposite from the angle, <span class="math inline">\(b\)</span> being the side next to the angle, and <span class="math inline">\(c\)</span> being the hypotenuse, or the longest side. Because of this connection, we can similarly write the three primary functions as: <span class="math display">\[
+<p>You can think of sine, cosine, and tangent as ratios that answer a very specific question: given an angle <span class="math inline">\(\theta\)</span>, what are the proportions of the sides of any right triangle that contains that angle? It doesn’t matter how large or small the triangle is. For example, the ratio of opposite to hypotenuse is always the same number: <span class="math inline">\(\sin\theta\)</span>. These functions don’t give us side lengths, but rather, a ratio that is fixed to that angle. Essentially, sine, cosine, and tangent are a way to encode the shape of a triangle using a single number, the angle. The pythagorean theorem, <span class="math inline">\(a^2 + b^2 = c^2\)</span>, finds missing sides of a right triangle, with <span class="math inline">\(a\)</span> being the side opposite from the angle, <span class="math inline">\(b\)</span> being the side next to the angle, and <span class="math inline">\(c\)</span> being the hypotenuse, or the longest side. Because of this connection, we can similarly write the three primary functions as: <span class="math display">\[
 \sin\theta = \frac{a}{c} \qquad
 \cos\theta = \frac{b}{c} \qquad
 \tan\theta = \frac{a}{b}
@@ -293,7 +293,7 @@ window.Quarto = {
 <h2 data-number="1.2" class="anchored" data-anchor-id="degrees-vs-radians"><span class="header-section-number">1.2</span> Degrees vs Radians</h2>
 <p>It’s important to discuss the units we use when measuring angles. Angles can be expressed in degrees or radians. In math, radians are preferred since they are a “natural” unit in the sense that they are directly related to the geometry of a circle. Instead of breaking up a circle into 360 arbitrary units, we can measure angles using the circle’s own radius. Here is the formula to better visualize this concept: <span class="math display">\[
 \text{Radian} = \frac{\text{distance traveled}}{\text{radius}}
-\]</span> Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.</p>
+\]</span> Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle (i.e., arc length) by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.</p>
 <p>To convert from degrees to radians, where <span class="math inline">\(\theta\)</span> is an angle; <span class="math display">\[
 \theta\cdot\frac{\pi}{180°}
 \]</span> To convert from radians to degrees: <span class="math display">\[
@@ -302,33 +302,27 @@ window.Quarto = {
 </section>
 <section id="special-right-triangles" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="special-right-triangles"><span class="header-section-number">1.3</span> Special Right Triangles</h2>
-<p>Special right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.</p>
+<p>Special right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. There are two special right triangles: the 30-60-90 and the 45-45-90. These are special because they are the only angles where the ratios come out as clean, exact numbers. Its helpful to think of them as geometric proofs of the ratios and not just a memory device. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.</p>
 <section id="special-right-triangle-1-30-60-90" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="special-right-triangle-1-30-60-90"><span class="header-section-number">1.3.1</span> Special Right Triangle #1: 30-60-90</h3>
+<p>The first special right triangle has a base length of 1, a height of <span class="math inline">\(\sqrt{3}\)</span>, and a hypotenuse of 2. Its smallest angle measures <span class="math inline">\(\frac{\pi}{6}\)</span> degrees and the remaining angle measures <span class="math inline">\(\frac{\pi}{3}\)</span> degrees. Below are the evaluations of sine, cosine, and tangent for the given angles:</p>
 <div class="columns">
-<div class="column" style="width:70%;">
-<p>The first special right triangle has a base length of 1, a height of 2, and a hypotenuse of <span class="math inline">\(\sqrt{3}\)</span>. Its smallest angle measures <span class="math inline">\(\frac{\pi}{6}\)</span> degrees and the remaining angle measures <span class="math inline">\(\frac{\pi}{3}\)</span> degrees.</p>
-</div><div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p><span class="math display">\[
-\begin{array}{cc}
-\sin(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{1}{2} &amp;
-\sin(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{\sqrt3}{2} &amp;
-\end{array}
+\sin\!\left(\frac{\pi}{6}\right) = \dfrac{\text{opp}}{\text{hyp}} = \frac{1}{2} \qquad
+\sin\!\left(\frac{\pi}{3}\right) = \dfrac{\text{opp}}{\text{hyp}} = \frac{\sqrt3}{2}
 \]</span> <span class="math display">\[
-\begin{array}{cc}
-\cos(\frac{\pi}{6}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{\sqrt3}{2}
-\cos(\frac{\pi}{3}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{1}{2}
-\end{array}
+\cos\!\left(\frac{\pi}{6}\right) = \dfrac{\text{adj}}{\text{hyp}} = \frac{\sqrt{3}}{2} \qquad
+\cos\!\left(\frac{\pi}{3}\right) = \dfrac{\text{adj}}{\text{hyp}} = \frac{1}{2}
 \]</span> <span class="math display">\[
-\begin{array}{cc}
-\tan(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt3}
-\tan(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{adj}} = \frac{\sqrt3}{1}
-\end{array}
+\tan\!\left(\frac{\pi}{6}\right) = \dfrac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt3} \qquad
+\tan\!\left(\frac{\pi}{3}\right) = \dfrac{\text{opp}}{\text{adj}} = \frac{\sqrt3}{1}
 \]</span></p>
+<p>Think of these evaluations as a way of “looking up” the ratio that corresponds to the angle. It doesn’t matter if the hypotenuse is 1 centimeter or 1 kilometer, in any right triangle where one angle is <span class="math inline">\(\frac{\pi}{3}\)</span>, for example, the fraction of the hypotenuse that is the adjacent side will always be exactly half. There is no arithmetic being done or formula we are plugging values into. These evaluations read a geometric fact because these ratios will hold for the specified angle no matter what.</p>
 </div><div class="column" style="width:1%;">
 
-</div><div class="column" style="width:40%;">
-<div id="692f4e08" class="cell" data-execution_count="1">
+</div><div class="column" style="width:39%;">
+<div id="34092cc2" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
