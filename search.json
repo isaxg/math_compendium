@@ -21,11 +21,33 @@
     ]
   },
   {
+    "objectID": "trig/basics.html#degrees-vs-radians",
+    "href": "trig/basics.html#degrees-vs-radians",
+    "title": "1  Basics of Trigonometry",
+    "section": "1.2 Degrees vs Radians",
+    "text": "1.2 Degrees vs Radians\nIt’s important to discuss the units we use when measuring angles. Angles can be expressed in degrees or radians. In math, radians are preferred since they are a “natural” unit in the sense that they are directly related to the geometry of a circle. Instead of breaking up a circle into 360 arbitrary units, we can measure angles using the circle’s own radius. Here is the formula to better visualize this concept: \\[\n\\text{Radian} = \\frac{\\text{distance traveled}}{\\text{radius}}\n\\] Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.\nTo convert from degrees to radians, where \\(\\theta\\) is an angle; \\[\n\\theta\\cdot\\frac{\\pi}{180°}\n\\] To convert from radians to degrees: \\[\n\\theta\\cdot\\frac{180°}{\\pi}\n\\]",
+    "crumbs": [
+      "Trigonometry",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basics of Trigonometry</span>"
+    ]
+  },
+  {
+    "objectID": "trig/basics.html#special-right-triangles",
+    "href": "trig/basics.html#special-right-triangles",
+    "title": "1  Basics of Trigonometry",
+    "section": "1.3 Special Right Triangles",
+    "text": "1.3 Special Right Triangles\nSpecial right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.\n\n1.3.1 Special Right Triangle #1: 30-60-90\n\n\nThe first special right triangle has a base length of 1, a height of 2, and a hypotenuse of \\(\\sqrt{3}\\). Its smallest angle measures \\(\\frac{\\pi}{6}\\) degrees and the remaining angle measures \\(\\frac{\\pi}{3}\\) degrees.\n\n\\[\n\\begin{array}{cc}\n\\sin(\\frac{\\pi}{6}) = \\dfrac{\\text{opp}}{\\text{hyp}} = \\frac{1}{2} &\n\\sin(\\frac{\\pi}{3}) = \\dfrac{\\text{opp}}{\\text{hyp}} = \\frac{\\sqrt3}{2} &\n\\end{array}\n\\] \\[\n\\begin{array}{cc}\n\\cos(\\frac{\\pi}{6}) = \\dfrac{\\text{adj}}{\\text{hyp}} = \\frac{\\sqrt3}{2}\n\\cos(\\frac{\\pi}{3}) = \\dfrac{\\text{adj}}{\\text{hyp}} = \\frac{1}{2}\n\\end{array}\n\\] \\[\n\\begin{array}{cc}\n\\tan(\\frac{\\pi}{6}) = \\dfrac{\\text{opp}}{\\text{adj}} = \\frac{1}{\\sqrt3}\n\\tan(\\frac{\\pi}{3}) = \\dfrac{\\text{opp}}{\\text{adj}} = \\frac{\\sqrt3}{1}\n\\end{array}\n\\]",
+    "crumbs": [
+      "Trigonometry",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basics of Trigonometry</span>"
+    ]
+  },
+  {
     "objectID": "trig/basics.html#the-unit-circle",
     "href": "trig/basics.html#the-unit-circle",
     "title": "1  Basics of Trigonometry",
-    "section": "1.2 The Unit Circle",
-    "text": "1.2 The Unit Circle\nThe unit circle is a circle of radius \\(r = 1\\) centered at the origin of the Cartesian plane. It is the foundation of trigonometry and, by extension, of much of calculus.\nFor any angle \\(\\theta\\) measured counterclockwise from the positive \\(x\\)-axis, the corresponding point on the unit circle is:\n\\[\n(\\cos\\theta,\\ \\sin\\theta)\n\\]",
+    "section": "1.4 The Unit Circle",
+    "text": "1.4 The Unit Circle\nThe unit circle is a circle of radius \\(r = 1\\) centered at the origin of the Cartesian plane. It is the foundation of trigonometry and, by extension, of much of calculus.\nFor any angle \\(\\theta\\) measured counterclockwise from the positive \\(x\\)-axis, the corresponding point on the unit circle is:\n\\[\n(\\cos\\theta,\\ \\sin\\theta)\n\\]",
     "crumbs": [
       "Trigonometry",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basics of Trigonometry</span>"

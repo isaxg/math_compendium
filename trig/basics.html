@@ -242,7 +242,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#the-three-primary-functions" id="toc-the-three-primary-functions" class="nav-link active" data-scroll-target="#the-three-primary-functions"><span class="header-section-number">1.1</span> The Three Primary Functions</a></li>
-  <li><a href="#the-unit-circle" id="toc-the-unit-circle" class="nav-link" data-scroll-target="#the-unit-circle"><span class="header-section-number">1.2</span> The Unit Circle</a></li>
+  <li><a href="#degrees-vs-radians" id="toc-degrees-vs-radians" class="nav-link" data-scroll-target="#degrees-vs-radians"><span class="header-section-number">1.2</span> Degrees vs Radians</a></li>
+  <li><a href="#special-right-triangles" id="toc-special-right-triangles" class="nav-link" data-scroll-target="#special-right-triangles"><span class="header-section-number">1.3</span> Special Right Triangles</a>
+  <ul class="collapse">
+  <li><a href="#special-right-triangle-1-30-60-90" id="toc-special-right-triangle-1-30-60-90" class="nav-link" data-scroll-target="#special-right-triangle-1-30-60-90"><span class="header-section-number">1.3.1</span> Special Right Triangle #1: 30-60-90</a></li>
+  </ul></li>
+  <li><a href="#the-unit-circle" id="toc-the-unit-circle" class="nav-link" data-scroll-target="#the-unit-circle"><span class="header-section-number">1.4</span> The Unit Circle</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +288,47 @@ window.Quarto = {
 \cos\theta = \frac{b}{c} \qquad
 \tan\theta = \frac{a}{b}
 \]</span></p>
-<div id="4f4ebfe4" class="cell" data-execution_count="1">
+</section>
+<section id="degrees-vs-radians" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="degrees-vs-radians"><span class="header-section-number">1.2</span> Degrees vs Radians</h2>
+<p>It’s important to discuss the units we use when measuring angles. Angles can be expressed in degrees or radians. In math, radians are preferred since they are a “natural” unit in the sense that they are directly related to the geometry of a circle. Instead of breaking up a circle into 360 arbitrary units, we can measure angles using the circle’s own radius. Here is the formula to better visualize this concept: <span class="math display">\[
+\text{Radian} = \frac{\text{distance traveled}}{\text{radius}}
+\]</span> Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.</p>
+<p>To convert from degrees to radians, where <span class="math inline">\(\theta\)</span> is an angle; <span class="math display">\[
+\theta\cdot\frac{\pi}{180°}
+\]</span> To convert from radians to degrees: <span class="math display">\[
+\theta\cdot\frac{180°}{\pi}
+\]</span></p>
+</section>
+<section id="special-right-triangles" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="special-right-triangles"><span class="header-section-number">1.3</span> Special Right Triangles</h2>
+<p>Special right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.</p>
+<section id="special-right-triangle-1-30-60-90" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="special-right-triangle-1-30-60-90"><span class="header-section-number">1.3.1</span> Special Right Triangle #1: 30-60-90</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>The first special right triangle has a base length of 1, a height of 2, and a hypotenuse of <span class="math inline">\(\sqrt{3}\)</span>. Its smallest angle measures <span class="math inline">\(\frac{\pi}{6}\)</span> degrees and the remaining angle measures <span class="math inline">\(\frac{\pi}{3}\)</span> degrees.</p>
+</div><div class="column" style="width:50%;">
+<p><span class="math display">\[
+\begin{array}{cc}
+\sin(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{1}{2} &amp;
+\sin(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{\sqrt3}{2} &amp;
+\end{array}
+\]</span> <span class="math display">\[
+\begin{array}{cc}
+\cos(\frac{\pi}{6}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{\sqrt3}{2}
+\cos(\frac{\pi}{3}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{1}{2}
+\end{array}
+\]</span> <span class="math display">\[
+\begin{array}{cc}
+\tan(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt3}
+\tan(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{adj}} = \frac{\sqrt3}{1}
+\end{array}
+\]</span></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:40%;">
+<div id="692f4e08" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -292,9 +337,12 @@ window.Quarto = {
 </div>
 </div>
 </div>
+</div>
+</div>
 </section>
-<section id="the-unit-circle" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="the-unit-circle"><span class="header-section-number">1.2</span> The Unit Circle</h2>
+</section>
+<section id="the-unit-circle" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-unit-circle"><span class="header-section-number">1.4</span> The Unit Circle</h2>
 <p>The <strong>unit circle</strong> is a circle of radius <span class="math inline">\(r = 1\)</span> centered at the origin of the Cartesian plane. It is the foundation of trigonometry and, by extension, of much of calculus.</p>
 <p>For any angle <span class="math inline">\(\theta\)</span> measured counterclockwise from the positive <span class="math inline">\(x\)</span>-axis, the corresponding point on the unit circle is:</p>
 <p><span class="math display">\[
