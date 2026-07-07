@@ -21,6 +21,61 @@ $$
 \tan\theta = \frac{a}{b}
 $$
 
+## Degrees vs Radians
+
+It's important to discuss the units we use when measuring angles. Angles can be expressed in degrees or radians. In math, radians are preferred since they are a "natural" unit in the sense that they are directly related to the geometry of a circle. Instead of breaking up a circle into 360 arbitrary units, we can measure angles using the circle's own radius. Here is the formula to better visualize this concept: 
+$$
+\text{Radian} = \frac{\text{distance traveled}}{\text{radius}}
+$$
+Imagine you are riding on a carousel and sitting on a horse that is 10 meters from the center of the ride. You can figure out the angle of your rotation by dividing how many meters you have traveled in a circle by 10 meters. You are left with a dimensionless unit (since dividing meters by meters cancels out) whose value describes the angle in radians.
+
+To convert from degrees to radians, where $\theta$ is an angle;
+$$
+\theta\cdot\frac{\pi}{180°}
+$$
+To convert from radians to degrees: 
+$$
+ \theta\cdot\frac{180°}{\pi}
+$$
+
+## Special Right Triangles
+
+Special right triangles are specific triangles with fixed angles, making their side lengths intuitive without even having to use the pythagorean theorem. Because of their simplicity, they make it easier to analyze the unit circle and evaluate trigonometric functions.
+
+### Special Right Triangle #1: 30-60-90
+:::: {.columns}
+
+::: {.column width="70%"}
+The first special right triangle has a base length of 1, a height of 2, and a hypotenuse of $\sqrt{3}$. Its smallest angle measures $\frac{\pi}{6}$ degrees and the remaining angle measures $\frac{\pi}{3}$ degrees. 
+
+
+:::
+
+:::{.column width="50%"}
+$$
+\begin{array}{cc}
+\sin(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{1}{2} &
+\sin(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{hyp}} = \frac{\sqrt3}{2} &
+\end{array}
+$$
+$$
+\begin{array}{cc}
+\cos(\frac{\pi}{6}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{\sqrt3}{2}
+\cos(\frac{\pi}{3}) = \dfrac{\text{adj}}{\text{hyp}} = \frac{1}{2}
+\end{array}
+$$
+$$
+\begin{array}{cc}
+\tan(\frac{\pi}{6}) = \dfrac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt3}
+\tan(\frac{\pi}{3}) = \dfrac{\text{opp}}{\text{adj}} = \frac{\sqrt3}{1}
+\end{array}
+$$
+:::
+
+::: {.column width="1%"}
+:::
+
+::: {.column width="40%"}
 ```{python}
 #| echo: false
 import matplotlib.pyplot as plt
@@ -30,19 +85,19 @@ import numpy as np
 fig, ax = plt.subplots(figsize=(5, 4))
 
 # Triangle vertices
-points = np.array([[0, 0], [1, 0], [0, np.sqrt(3)]])
+points = np.array([[1, 0], [0, 0], [1, np.sqrt(3)]])
 triangle = plt.Polygon(points, fill=False, edgecolor='black', linewidth=2)
 ax.add_patch(triangle)
 
 # Side labels
 ax.text(0.5, -0.15, 'a = 1', ha='center', fontsize=11)
-ax.text(-0.15, np.sqrt(3)/2, 'b = √3', ha='center', fontsize=11, rotation=90)
-ax.text(0.6, np.sqrt(3)/2, 'c = 2', ha='center', fontsize=11, rotation=-60)
+ax.text(1.15, np.sqrt(3)/2, 'b = √3', ha='center', fontsize=11, rotation=90)
+ax.text(0.4, np.sqrt(3)/2, 'c = 2', ha='center', fontsize=11, rotation=60)
 
 # Angle labels
-ax.text(0.08, 0.08, '90°', fontsize=10)
-ax.text(-0.05, np.sqrt(3)-0.15, '60°', fontsize=10)
-ax.text(0.82, 0.05, '30°', fontsize=10)
+ax.text(0.92, 0.08, r'$\frac{\pi}{2}$', fontsize=12)
+ax.text(0.95, np.sqrt(3) - 0.25, r'$\frac{\pi}{6}$', ha='center', fontsize=12)
+ax.text(0.14, 0.08, r'$\frac{\pi}{3}$', fontsize=12)
 
 ax.set_xlim(-0.3, 1.4)
 ax.set_ylim(-0.3, 2.1)
@@ -53,6 +108,9 @@ ax.axis('off')
 plt.tight_layout()
 plt.show()
 ```
+:::
+
+::::
 
 ## The Unit Circle
 
