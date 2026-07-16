@@ -1,3 +1,181 @@
 ---
 title: "Integration Techniques"
 ---
+## A Note on the Nature of Integration {.unnumbered}
+Integration is often introduced by relating it to differentiation, and while it is technically the inverse of differentiation, the actual process of integration is quite a distinct experience. Differentiation has clean, mechanical rules that reliably produce an answer for any function you encounter. The process of taking a derivative is quite linear: choose from a (short) list of formulaic rules, apply the rules, and simplify your answer with a bit of algebra. Integration, on the other hand, demands a certain level of critical thinking and pattern recognition, and you will soon see that not every integral has a closed-form solution at all. This is all to say that you will save yourself some shock if you avoid building your expectations for integration around the notion that it will be the opposite of taking a derivative.
+
+The process of integration can look and feel a lot like failure. Improving your skills will require you to let go of a desire for perfection and just choose a strategy to dive into the problem-solving process, even if it may be the incorrect one. It is normal to try something, get stuck, backtrack, and try again many times until you arrive at the answer. Learning to integrate is largely learning to tolerate uncertainty and to be resilient amidst the presence of failure. 
+
+It is common for there to be a learning curve as we transition from differentiation to integration, but don't let this discourage you; everytime you solve one of these puzzles, you expand the limits of your mind, add new tools to your toolkit, and get a step closer to mathematical maturity. 
+
+The strategies outlined in this chapter cover the most common forms you will encounter, but knowing *which* strategy to apply (or whether to combine them) is a skill that develops through practice and through pushing through failed attempts. 
+
+## Integration by Substitution
+Often referred to as "u-substitution" or "u-sub", integration by substitution is a technique that essentially undoes the chain rule to evaluate complex integrals. Remember that chain rule is our technique for differentiating composite functions, i.e., a function inside of a function. Similarly, we can use u-sub to find antiderivatives of composite functions. 
+
+Take the following integrand as an example: $\int 2x(x^2+3)^7 \,dx$
+Recognize that it takes the classic form of a composite function: $((f \circ g)(x))$, where $(x^2+3)$ is our $g(x)$, or our "inner" function in this case. In a similar way to the chain rule, we will choose this part of the function to be our $u$. 
+
+### Choosing $u$: General Heuristics
+
+The most important step in u-substitution is recognizing which part of the 
+integrand to set as $u$. The following strategies cover the most common forms:
+
+- **Composite functions** — choose the inner function (Strategy 1)
+- **Exponential terms** — choose the exponent (Strategy 2)  
+- **Fractions** — choose the denominator when its derivative appears in the numerator (Strategy 3)
+- **Logarithmic terms** — choose the argument of the log (Strategy 4)
+
+### Strategy 1: Basic U-Substitution
+
+**Example:** Evaluate $\int 2x(x^2+3)^7 \,dx$
+
+Recognize that $(x^2+3)$ is our inner function $g(x)$, so we set $u = x^2 + 3$.
+
+**Step 1: Set $u$ equal to the chosen expression**
+$$u = x^2+3$$
+
+**Step 2: Differentiate with respect to $x$ and isolate $dx$**
+$$\frac{du}{dx} = 2x \implies dx = \frac{du}{2x}$$
+
+**Step 3: Substitute $u$ and $dx$ into the integral**
+$$\int 2x(u)^7 \frac{du}{2x}$$
+
+Notice the $2x$ terms cancel, leaving:
+$$\int u^7 \,du$$
+
+**Step 4: Integrate with respect to $u$**
+$$= \frac{u^8}{8} + C$$
+
+**Step 5: Substitute the original expression back in for $u$**
+$$= \frac{1}{8}(x^2+3)^8 + C$$
+
+Therefore:
+$$\int 2x(x^2+3)^7 \,dx = \frac{1}{8}(x^2+3)^8 + C$$
+
+### Strategy 2: Single Exponential Form
+
+If there is a single exponential term, we often let the exponent be the $u$.
+
+**Example** Evaluate $\int x^4e^{{7x}^{5}}\,dx$
+
+Here, recognize that our exponential term is raised to the power ${7x}^{5}$. Let's choose this as our $u$ and proceed with the following u-sub steps as we did in the previous example.
+
+**Step 1: Set $u$ equal to the chosen expression**
+$$u = {7x}^{5}$$
+
+**Step 2: Differentiate with respect to $x$ and isolate $dx$**
+$$\frac{du}{dx} = 35x^4 \implies dx = \frac{du}{35x^4}$$
+
+**Step 3: Substitute $u$ and $dx$ into the integral**
+$$\int x^4e^u\frac{du}{35x^4}$$
+
+Notice the $x^4$ terms cancel, leaving:
+$$\int e^u\frac{du}{35}\,du$$
+
+**Step 4: Integrate with respect to $u$**
+$$= \frac{1}{35}e^u + C$$
+
+**Step 5: Substitute the original expression back in for $u$**
+$$= \frac{1}{35}e^{{7x}^{5}} + C$$
+
+Therefore:
+$$\int x^4e^{{7x}^{5}}\,dx = \frac{1}{35}e^{{7x}^{5}} + C$$
+
+### Strategy 3: Non-Reducible Fractions
+If we see a fraction we can't reduce, then we often let the entire denominator be $u$.
+
+**Example 1** Evaluate $\int \frac{3x^2+7}{x^3+7x}\,dx$
+
+There's no factoring we can do to get this integrand into a simpler form so let's choose the denominator $x^3+7x$ as our $u$ and proceed with our u-sub steps. 
+
+**Step 1: Set $u$ equal to the chosen expression**
+$$u = x^3+7x$$
+
+**Step 2: Differentiate with respect to $x$ and isolate $dx$**
+$$\frac{du}{dx} = 3x^2+7 \implies dx = \frac{du}{3x^2+7}$$
+
+**Step 3: Substitute $u$ and $dx$ into the integral**
+$$\int \frac{3x^2+7}{u} \cdot \frac{du}{3x^2+7}$$
+
+Notice the $x^4$ terms cancel, leaving:
+$$\int \frac{1}{u}\,du$$
+
+**Step 4: Integrate with respect to $u$**
+$$\int u^{-1}\,du \implies ln|u| + C$$
+
+**Step 5: Substitute the original expression back in for $u$**
+$$= ln|x^3+7x| + C$$
+
+Therefore:
+$$\int \frac{3x^2+7}{x^3+7x}\,dx = ln|x^3+7x| + C$$
+
+**Example 2** Evaluate $\int \tan x\,dx$ 
+
+This integrand may not appear as a fraction on the surface, but let's recall one of our trig identities and recognize that $\tan x\ = \frac{\sin x}{\cos x}$, rewriting the integral as:
+$$\int \frac{\sin x}{\cos x}\,dx$$
+Because of this preliminary rewrite, we can now apply the same strategy, choosing the denominator $\tan x\$ as our $u$ and proceeding with u-sub steps.
+
+**Step 1: Set $u$ equal to the chosen expression**
+$$u = \cos x$$
+
+**Step 2: Differentiate with respect to $x$ and isolate $dx$**
+$$\frac{du}{dx} = -\sin x \implies dx = \frac{du}{-\sin x}$$
+
+**Step 3: Substitute $u$ and $dx$ into the integral**
+$$\int \frac{\sin x}{u} \cdot \frac{du}{-\sin x}$$
+
+Notice the $\sin x$ terms cancel, leaving:
+$$\int -\frac{1}{u}\,du$$
+
+**Step 4: Integrate with respect to $u$**
+$$= -ln|u| + C$$
+
+**Step 5: Substitute the original expression back in for $u$**
+$$= -ln|\cos x| + C$$
+
+Therefore:
+$$\int \tan x\,dx = \int \frac{\sin x}{\cos x}\,dx = -ln|\cos x| + C$$
+
+
+<!--> A note as we begin working with integrals: This is only the beginning of some of the "outside-of-the-box" thinking skills Calculus II demands. It is common for there to be a learning curve as we transition from differentiation to integration, but don't let this discourage you; everytime we solve these puzzles, we expand the limits of our mind, add new tools to our toolkit, and get a step closer to mathematical maturity.--> 
+
+### Strategy 4: Logarithmic Terms
+If there is a log term as part of a multiplication or division, we often let the entire term with the log be $u$.
+
+**Example 1** Evaluate $\int \frac{\ln(x)+3}{x}\,dx$
+
+It may be tempting to choose $x$ as our $u$ — after all, we just covered this as our strategy for integrating non-reducible fractions. However, the log term in the numerator complicates things. A natural question arises: how do we choose $u$ when the integral doesn't obviously fit a pattern we recognize? A useful approach when you get stuck is to choose the "unknown" term—that is, the term for which we don't have a clean antiderivative formula—as our $u$. Remembering our antiderivative rules, we can recognize $\ln(x)$ as the unknown piece of this integrand. Since the constant $3$ is simply added to $\ln(x)$ and the two are inseparable in the numerator, it is natural to treat the entire expression $\ln(x) + 3$ as our $u$. As we will see, this choice keeps our substitution clean and allows all original variables to cancel neatly.
+
+**Step 1: Set $u$ equal to the chosen expression**
+$$u = \ln(x)+3$$
+
+**Step 2: Differentiate with respect to $x$ and isolate $dx$**
+$$\frac{du}{dx} = \frac{1}{x} \implies dx = du \cdot x$$
+
+**Step 3: Substitute $u$ and $dx$ into the integral**
+$$\int \frac{u}{x}\, du \cdot x$$
+
+Notice the $x$ terms cancel, leaving:
+$$\int u \cdot du$$
+
+**Step 4: Integrate with respect to $u$**
+$$ \frac{u^2}{2} + C$$
+
+**Step 5: Substitute the original expression back in for $u$**
+$$= \frac{(\ln(x)+3)^2}{2} + C \implies =\frac{1}{2}(\ln(x)+3)^2+C$$
+
+Therefore:
+$$\int \frac{\ln(x)+3}{x}\,dx = \frac{1}{2}(\ln(x)+3)^2+C$$
+
+
+## Integration by parts
+Think of this technique as a "reverse product rule". 
+
+## Trig-Substitution
+
+
+## Partial Fraction Decomposition
+
+
+## Improper Integrals

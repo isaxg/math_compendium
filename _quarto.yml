@@ -21,7 +21,6 @@ book:
     - part: "Mathematical Economics"
       chapters:
         - econ/optimization.qmd
-        - econ/supply_demand.qmd
 
 bibliography: references.bib
 

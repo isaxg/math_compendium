@@ -1,45 +1,155 @@
 ---
 title: "Introduction to Derivatives"
 ---
+```{=html}
+<style>
+mjx-container[display="true"] {
+  text-align: left !important;
+  margin-left: 1em !important;
+}
+</style>
+```
 ## Derivatives
-A derivative measures the instantaneous rate of change of a function. At any given point, the derivative is the slope of the line tangent to that point. 
+A derivative measures the instantaneous rate of change of a function. At any given point, the derivative is the slope of the line tangent to the curve at that point. This is different from the average rate of change between two points, which is the slope of the secant line connecting them. 
+The following graph depicts both concepts:
 
+<!--Explanation for where derivatives come from but for now going to skip it:
+$$
+m_s = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+$$
+
+As the two points grow closer together, the secant line approaches the 
+tangent line — and the average rate of change approaches the instantaneous 
+rate of change. This limiting process is the foundation of the derivative:
+
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+
+The derivative $f'(x)$ gives the slope of the tangent line at any point 
+$x$. The average rate of change $m_s$ gives the slope of the secant line 
+between two fixed points. The derivative is what the average rate of change 
+*becomes* as those two points collapse into one.-->
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(7, 4))
+
+dark = '#333333'
+purple = '#134cd1'
+green = '#e77f10'
+
+# Curve: use a cubic for interesting shape
+x = np.linspace(-2.5, 2.5, 400)
+f = lambda x: 0.3*x**3 - 0.5*x + 0.3
+ax.plot(x, f(x), color=dark, linewidth=2, zorder=2)
+
+# --- Tangent line at x = -1.5 ---
+x_t = -1.5
+slope_t = 0.9*x_t**2 - 0.5          # derivative of f
+y_t = f(x_t)
+x_tang = np.linspace(-2.4, -0.6, 100)
+y_tang = slope_t * (x_tang - x_t) + y_t
+ax.plot(x_tang, y_tang, color=purple, linewidth=1.8, zorder=3)
+ax.plot(x_t, y_t, 'o', color=purple, markersize=6, zorder=4)
+ax.text(x_t - 0.87, y_t + 0.14,
+        r'$m_t =$ derivative', color=purple, fontsize=9)
+
+# --- Secant line between x1=0.8 and x2=2.0 ---
+x1, x2 = 0.8, 2.0
+y1, y2 = f(x1), f(x2)
+slope_s = (y2 - y1) / (x2 - x1)
+x_sec = np.linspace(0.3, 2.4, 100)
+y_sec = slope_s * (x_sec - x1) + y1
+ax.plot(x_sec, y_sec, color=green, linewidth=1.8, zorder=3)
+ax.plot([x1, x2], [y1, y2], 'o', color=green, markersize=6, zorder=4)
+ax.text(x2 - 0.18, y2 + 0.18,
+        r'$m_s =$ avg rate of change', color=green, fontsize=9)
+
+# x1, x2 labels on x-axis
+ax.text(x1, -0.35, r'$x_1$', ha='center', fontsize=10, color=green)
+ax.text(x2, -0.35, r'$x_2$', ha='center', fontsize=10, color=green)
+ax.plot([x1, x1], [0, y1], color=green, linewidth=0.7,
+        linestyle=':', zorder=1)
+ax.plot([x2, x2], [0, y2], color=green, linewidth=0.7,
+        linestyle=':', zorder=1)
+
+# Axes
+ax.axhline(0, color='black', linewidth=0.8)
+ax.axvline(0, color='black', linewidth=0.8)
+ax.set_xticks([])
+ax.set_yticks([])
+ax.text(2.72, 0, r'$x$', fontsize=10, va='center')
+ax.text(0, f(2.3)+0.1, r'$f(x)$', fontsize=10)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+ax.spines['left'].set_visible(False)
+
+ax.set_xlim(-2.7, 2.7)
+ax.set_ylim(-2.7, 2.7)
+
+plt.tight_layout()
+plt.show()
+```
 ## Differentiation Rules
 
-$$
-\frac{d}{dx}(a)=0
-$$
-$$
-\frac{d}{dx}(x^n)=nx^{n-1}
-$$
-$$
-\frac{d}{dx}(e^x)=e^x
-$$
-$$
-\frac{d}{dx}(a^x)=a^x \ln(a)
-$$
-$$
-\frac{d}{dx}(\ln(x))=\frac{1}{x}
-$$
-$$
-\frac{d}{dx}(\log_a x)=\frac{1}{x}\cdot\frac{1}{\ln(a)}
-$$
-$$
-\frac{d}{dx}(\sin(x))=\cos(x)
-$$
-$$
-\frac{d}{dx}(\cos(x))=-\sin(x)
-$$
-$$
-\frac{d}{dx}(\tan(x))=\sec^2(x)
-$$
-$$
-\frac{d}{dx}(\sec(x))=\sec(x)\tan(x)
-$$
-$$
-\frac{d}{dx}(\csc(x))=-\csc(x)\cot(x)
-$$
-$$
-\frac{d}{dx}(\cot(x))=-\csc^2(x)
-$$
+:::: {.columns}
 
+::: {.column width="48%"}
+**Constant & Power**
+$$\frac{d}{dx}(a)=0$$
+$$\frac{d}{dx}(x^n)=nx^{n-1}$$
+
+**Exponential & Logarithmic**
+$$\frac{d}{dx}(e^x)=e^x$$
+$$\frac{d}{dx}(a^x)=a^x \ln(a)$$
+$$\frac{d}{dx}(\ln x)=\frac{1}{x}$$
+$$\frac{d}{dx}(\log_a x)=\frac{1}{x\ln(a)}$$
+
+**Inverse Trigonometric**
+$$\frac{d}{dx}(\arcsin x)=\frac{1}{\sqrt{1-x^2}}$$
+$$\frac{d}{dx}(\arccos x)=\frac{-1}{\sqrt{1-x^2}}$$
+$$\frac{d}{dx}(\arctan x)=\frac{1}{1+x^2}$$
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+**Trigonometric**
+$$\frac{d}{dx}(\sin x)=\cos x$$
+$$\frac{d}{dx}(\cos x)=-\sin x$$
+$$\frac{d}{dx}(\tan x)=\sec^2 x$$
+$$\frac{d}{dx}(\sec x)=\sec x\tan x$$
+$$\frac{d}{dx}(\csc x)=-\csc x\cot x$$
+$$\frac{d}{dx}(\cot x)=-\csc^2 x$$
+
+**Domain Restrictions**
+Recall the three general rules that restrict a domain:
+
+1. Denominators: $d \neq 0$
+2. Even roots: expression inside $\geq 0$
+3. Logarithms: expression inside $> 0$ 
+
+Several derivative formulas carry implicit domain restrictions or points where 
+the formula breaks down and the function is not differentiable. This does not 
+mean the function itself is necessarily discontinuous at those points, but 
+rather that the derivative fails to exist there. Recognizing which rules 
+carry these restrictions is an important part of analyzing the full behavior 
+of a function.
+
+<!--These restrictions apply when determining the domain of a derivative. 
+Note that domain restrictions on a derivative do not prevent differentiation 
+— they define *where* the resulting formula is valid. A function may exist 
+at a point where its derivative does not. When the derivative formula breaks 
+down at a boundary (such as a zero denominator or negative radicand), the 
+function is not differentiable at that point even if it is defined there.
+-->
+
+:::
+
+::::

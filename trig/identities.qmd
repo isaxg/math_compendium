@@ -1,3 +1,31 @@
 ---
 title: "Trigonometric Identities"
 ---
+In the previous section, we introduced the three primary trigonometric functions: sine, cosine, and tangent. In this section, we introduce their reciprocals cosecant, secant, and cotangent. Once we establish these six fundamental functions we can explore the key identities that relate all six functions to one another and to the pythagorean theorem. These identities will become indispensable tools in your toolkit, particularly when we get to integration, so take special care to familiarize yourself with them.
+
+## The Reciprocal Functions
+
+The remaining three trigonometric functions are secant, cosecant, and cotangent and are reciprocals of the three primary functions sine, cosine, and tangent. They are defined as follows:
+$$
+\sec\theta = \dfrac{1}{\cos} = \dfrac{1}{\frac{\text{adj}}{\text{hyp}}}=\dfrac{\text{hyp}}{\text{adj}} 
+$$
+$$
+\csc\theta = \dfrac{1}{\sin} = \dfrac{1}{\frac{\text{opp}}{\text{hyp}}}=\dfrac{\text{hyp}}{\text{opp}} 
+$$
+$$
+\cot\theta = \dfrac{1}{\tan} = \dfrac{1}{\frac{\text{opp}}{\text{adj}}}=\dfrac{\text{adj}}{\text{opp}}
+$$
+
+### Cosecant
+
+### Secant
+
+### Cotangent
+
+## Rewriting Trig Functions in Terms of Sine and Cosine
+
+## Pythagorean Identities
+
+## Double Angle Formulas
+
+## Power Reduction Formulas

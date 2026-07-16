@@ -1,3 +1,213 @@
 ---
-title: "Inverse Trigonometric Functions"
+title: "Inverse Trigonometry"
 ---
+
+## Inverse Trigonometric Functions
+
+In the previous sections, we used trigonometric functions to answer the question: *given an angle $\theta$, what is the corresponding ratio?* The inverse trigonometric functions reverse this question entirely: *given a  ratio, what is the angle that produced it?*. The functions are the following:
+
+$$
+\sin^{-1}(x)=\arcsin(x)
+$$
+
+
+<!--Recognize that the $-1$ here symbolizes that the function is inverse. It is not to be thought of as an exponent that would yield a reciprocal:
+$$\sin^{-1}(x)\neq\frac{1}{{\sin(x)}}$$-->
+
+$$
+\cos^{-1}(x)=\arccos(x)
+$$
+$$
+\tan^{-1}(x)=\arctan(x)
+$$
+
+Think of arcsine, arccosine, and arctangent as "undoing" sine, cosine, and tangent. For example, we know that $\sin\!\left(\frac{\pi}{6}\right) = \frac{1}{2}$. The inverse sine function lets us ask this in reverse: which angle $\theta$ satisfies $\sin(\theta) = \frac{1}{2}$? The answer, written $\arcsin\!\left(\frac{1}{2}\right) = \frac{\pi}{6}$, is exactly that angle.
+
+However, a subtlety arises immediately. For a function to be invertible, it must return exactly one value, but since sine, cosine, and tangent are periodic functions, each ratio corresponds to infinitely many angles. For example, $\sin(\theta) = \frac{1}{2}$ is satisfied not just by $\frac{\pi}{6}$ but by $\frac{5\pi}{6}$, and by infinitely many others. For these inverses to be actual functions, we must impose restrictions on sine, cosine, and tangent so that any unique input to these functions has a unique output. 
+
+## Principal Values
+
+These restrictions manifest in something called the principal value branch, or the principal interval. The intervals define the single agreed-upon output angle chosen from the infinitely many that would technically satisfy the equation. These outputs are called principal values. Just as $\sqrt{4}$ returns $+2$ by convention rather than $-2$, $\arcsin\!\left(\frac{1}{2}\right)$ returns $\frac{\pi}{6}$ rather than $\frac{5\pi}{6}$ because $\frac{\pi}{6}$ falls within the principal interval $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$. Without a principal interval for each primary trig function, it would be impossible to have inverses of these functions as we would get infinitely many answers for any given degree. 
+
+## The Principal Intervals for Sine, Cosine, and Tangent
+
+The following graphs show each inverse function as a restricted slice of its corresponding trigonometric function:
+
+<!--This satisfies the property of inverse functions that says a function must beeach unique input has a unique output. the **principal values** of each inverse function, or, the single agreed-upon output angle chosen from the infinitely many that would technically satisfy the equation. Just as $\sqrt{4}$ returns $+2$ by convention rather than $-2$, $\arcsin\!\left(\frac{1}{2}\right)$ returns $\frac{\pi}{6}$ rather than $\frac{5\pi}{6}$ because $\frac{\pi}{6}$ falls within the principal interval $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.
+
+However, a subtlety arises immediately. Since sine, cosine, and tangent are periodic functions, each ratio corresponds to infinitely many angles.  $\sin(\theta) = \frac{1}{2}$ is satisfied not just by $\frac{\pi}{6}$ but by $\frac{5\pi}{6}$, and by infinitely many others. For a function to be invertible, it must return exactly one value, so we restrict each trig function to a specific interval where it is one-to-one before defining its inverse. These restricted intervals define the **principal values** of each inverse function, or, the single agreed-upon output angle chosen from the infinitely many that would technically satisfy the equation. Just as $\sqrt{4}$ returns $+2$ by convention rather than $-2$, $\arcsin\!\left(\frac{1}{2}\right)$ returns $\frac{\pi}{6}$ rather than $\frac{5\pi}{6}$ because $\frac{\pi}{6}$ falls within the principal interval $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.
+-->
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(7, 4))
+
+purple = '#7B4FA6'
+dark = '#333333'
+
+# Full sine curve
+x_full = np.linspace(-3*np.pi, 3*np.pi, 1000)
+ax.plot(x_full, np.sin(x_full), color=dark, linewidth=1.8, zorder=2)
+
+# Restricted interval highlighted in purple
+x_restrict = np.linspace(-np.pi/2, np.pi/2, 300)
+ax.plot(x_restrict, np.sin(x_restrict), color=purple, linewidth=2.5, zorder=3)
+
+# Purple dashed box
+box_x = [-np.pi/2, np.pi/2, np.pi/2, -np.pi/2, -np.pi/2]
+box_y = [-1, -1, 1, 1, -1]
+ax.plot(box_x, box_y, color=purple, linewidth=2.5,
+        linestyle='-', alpha=0.4, zorder=4)
+
+# Axes lines
+ax.axhline(0, color='black', linewidth=0.8)
+ax.axvline(0, color='black', linewidth=0.8)
+
+# Remove all x-axis ticks and labels 
+ax.set_xticks([])
+
+# Floating purple labels just below the box
+ax.text(-np.pi/2, -1.25, r'$-\frac{\pi}{2}$',
+        ha='center', fontsize=11, color=purple)
+ax.text(np.pi/2, -1.25, r'$\frac{\pi}{2}$',
+        ha='center', fontsize=11, color=purple)
+
+ax.set_yticks([-1, 0, 1])
+
+# Two-line two-color title
+ax.text(0.5, 1.08, r'$f(x) = \sin(x)$',
+        transform=ax.transAxes, ha='center', fontsize=11, color=dark)
+ax.text(0.5, 1.01, r'principal interval for $f(x) = \sin^{-1}(x)$',
+        transform=ax.transAxes, ha='center', fontsize=11, color=purple)
+
+ax.set_xlim(-2*np.pi, 2*np.pi)
+ax.set_ylim(-1.5, 1.4)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(7, 4))
+
+purple = '#7B4FA6'
+dark = '#333333'
+
+# Full cosine curve
+x_full = np.linspace(-3*np.pi, 3*np.pi, 1000)
+ax.plot(x_full, np.cos(x_full), color=dark, linewidth=1.8, zorder=2)
+
+# Restricted interval highlighted in purple
+x_restrict = np.linspace(0, np.pi, 300)
+ax.plot(x_restrict, np.cos(x_restrict), color=purple, linewidth=2.5, zorder=3)
+
+# Purple dashed box
+box_x = [0, np.pi, np.pi, 0, 0]
+box_y = [-1, -1, 1, 1, -1]
+ax.plot(box_x, box_y, color=purple, linewidth=2.5,
+        linestyle='-', alpha=0.4, zorder=4)
+
+# Axes lines
+ax.axhline(0, color='black', linewidth=0.8)
+ax.axvline(0, color='black', linewidth=0.8)
+
+# Remove all x-axis ticks and labels 
+ax.set_xticks([])
+
+# Floating purple labels just below the box
+ax.text(0, -1.25, r'$0$', ha='center', fontsize=11, color=purple)
+ax.text(np.pi, -1.25, r'$\pi$', ha='center', fontsize=11, color=purple)
+
+ax.set_yticks([-1, 0, 1])
+
+# Two-line two-color title
+ax.text(0.5, 1.08, r'$f(x) = \cos(x)$',
+        transform=ax.transAxes, ha='center', fontsize=11, color=dark)
+ax.text(0.5, 1.01, r'principal interval for $f(x) = \cos^{-1}(x)$',
+        transform=ax.transAxes, ha='center', fontsize=11, color=purple)
+
+ax.set_xlim(-2*np.pi, 2*np.pi)
+ax.set_ylim(-1.5, 1.4)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(7, 4))
+
+purple = '#7B4FA6'
+dark = '#333333'
+
+# Plot each branch of tan separately to avoid vertical lines
+branches = [
+    (-3*np.pi/2 + 0.05, -np.pi/2 - 0.05),
+    (-np.pi/2 + 0.05,    np.pi/2 - 0.05),
+    ( np.pi/2 + 0.05,  3*np.pi/2 - 0.05),
+]
+for x_start, x_end in branches:
+    x = np.linspace(x_start, x_end, 300)
+    ax.plot(x, np.tan(x), color=dark, linewidth=1.8, zorder=2)
+
+# Restricted branch in purple
+x_restrict = np.linspace(-np.pi/2 + 0.05, np.pi/2 - 0.05, 300)
+ax.plot(x_restrict, np.tan(x_restrict), color=purple, linewidth=2.5, zorder=3)
+
+# Dashed vertical asymptote lines
+for xval in [-3*np.pi/2, -np.pi/2, np.pi/2, 3*np.pi/2]:
+    ax.axvline(xval, color=dark, linewidth=0.8, linestyle='--', zorder=1)
+
+# Solid semi-transparent purple box
+box_x = [-np.pi/2, np.pi/2, np.pi/2, -np.pi/2, -np.pi/2]
+box_y = [-4, -4, 4, 4, -4]
+ax.plot(box_x, box_y, color=purple, linewidth=2.5,
+        linestyle='-', alpha=0.4, zorder=4)
+
+# Axes
+ax.axhline(0, color='black', linewidth=0.8)
+ax.axvline(0, color='black', linewidth=0.8)
+
+# Remove all ticks and spines
+ax.set_xticks([])
+ax.set_yticks([0])
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+
+# Floating purple labels below box
+ax.text(-1.2*np.pi/2, -4.6, r'$-\frac{\pi}{2}$',
+        ha='center', fontsize=11, color=purple)
+ax.text(1.08*np.pi/2, -4.6, r'$\frac{\pi}{2}$',
+        ha='center', fontsize=11, color=purple)
+
+# Two-line title
+ax.text(0.5, 1.08, r'$f(x) = \tan(x)$',
+        transform=ax.transAxes, ha='center', fontsize=11, color=dark)
+ax.text(0.5, 1.01, r'principal interval for $f(x) = \tan^{-1}(x)$',
+        transform=ax.transAxes, ha='center', fontsize=11, color=purple)
+
+ax.set_xlim(-2*np.pi, 2*np.pi)
+ax.set_ylim(-5, 5)
+
+plt.tight_layout()
+plt.show()
+```
+
+
+<!--Notes for the future: maybe add actual inverse function graphs separately instead of just the restricted original function graph version.-->

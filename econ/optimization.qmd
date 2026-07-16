@@ -1,3 +1,33 @@
 ---
 title: "Optimization"
 ---
+
+Optimization is the process of finding the maximum or minimum value of a 
+function in the context of an applied problem. In economics, this translates 
+directly to questions every firm and consumer faces: How much should a firm 
+produce to maximize profit? At what price is revenue maximized? How does a 
+consumer allocate a fixed budget to maximize utility? The calculus tools 
+developed in the previous chapter give us a precise, systematic way to 
+answer these questions.
+
+## Key Functions in Economic Optimization
+
+### Cost Functions
+
+### Revenue Functions
+
+### Profit Functions
+
+## Marginal Analysis
+
+### Marginal Cost
+
+### Marginal Revenue
+
+### Marginal Profit
+
+## Profit Maximization
+
+## The Role of Constraints
+
+*To be continued... optimization under constraints and an introduction to Lagrangian methods.*
