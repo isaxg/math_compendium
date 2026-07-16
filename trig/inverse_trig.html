@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Inverse Trigonometric Functions – Mathematical Foundations for Economics Students</title>
+<title>3&nbsp; Inverse Trigonometry – Mathematical Foundations for Economics Students</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -85,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../trig/basics.html">Trigonometry</a></li><li class="breadcrumb-item"><a href="../trig/inverse_trig.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../trig/basics.html">Trigonometry</a></li><li class="breadcrumb-item"><a href="../trig/inverse_trig.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -140,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../trig/inverse_trig.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></span></a>
   </div>
 </li>
       </ul>
@@ -194,12 +223,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../econ/supply_demand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Supply and Demand</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -207,15 +230,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#inverse-trigonometric-functions" id="toc-inverse-trigonometric-functions" class="nav-link active" data-scroll-target="#inverse-trigonometric-functions"><span class="header-section-number">3.1</span> Inverse Trigonometric Functions</a></li>
+  <li><a href="#principal-values" id="toc-principal-values" class="nav-link" data-scroll-target="#principal-values"><span class="header-section-number">3.2</span> Principal Values</a></li>
+  <li><a href="#the-principal-intervals-for-sine-cosine-and-tangent" id="toc-the-principal-intervals-for-sine-cosine-and-tangent" class="nav-link" data-scroll-target="#the-principal-intervals-for-sine-cosine-and-tangent"><span class="header-section-number">3.3</span> The Principal Intervals for Sine, Cosine, and Tangent</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../trig/basics.html">Trigonometry</a></li><li class="breadcrumb-item"><a href="../trig/inverse_trig.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../trig/basics.html">Trigonometry</a></li><li class="breadcrumb-item"><a href="../trig/inverse_trig.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></h1>
 </div>
 
 
@@ -232,8 +263,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="inverse-trigonometric-functions" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="inverse-trigonometric-functions"><span class="header-section-number">3.1</span> Inverse Trigonometric Functions</h2>
+<p>In the previous sections, we used trigonometric functions to answer the question: <em>given an angle <span class="math inline">\(\theta\)</span>, what is the corresponding ratio?</em> The inverse trigonometric functions reverse this question entirely: <em>given a ratio, what is the angle that produced it?</em>. The functions are the following:</p>
+<p><span class="math display">\[
+\sin^{-1}(x)=\arcsin(x)
+\]</span></p>
+<!--Recognize that the $-1$ here symbolizes that the function is inverse. It is not to be thought of as an exponent that would yield a reciprocal:
+$$\sin^{-1}(x)\neq\frac{1}{{\sin(x)}}$$-->
+<p><span class="math display">\[
+\cos^{-1}(x)=\arccos(x)
+\]</span> <span class="math display">\[
+\tan^{-1}(x)=\arctan(x)
+\]</span></p>
+<p>Think of arcsine, arccosine, and arctangent as “undoing” sine, cosine, and tangent. For example, we know that <span class="math inline">\(\sin\!\left(\frac{\pi}{6}\right) = \frac{1}{2}\)</span>. The inverse sine function lets us ask this in reverse: which angle <span class="math inline">\(\theta\)</span> satisfies <span class="math inline">\(\sin(\theta) = \frac{1}{2}\)</span>? The answer, written <span class="math inline">\(\arcsin\!\left(\frac{1}{2}\right) = \frac{\pi}{6}\)</span>, is exactly that angle.</p>
+<p>However, a subtlety arises immediately. For a function to be invertible, it must return exactly one value, but since sine, cosine, and tangent are periodic functions, each ratio corresponds to infinitely many angles. For example, <span class="math inline">\(\sin(\theta) = \frac{1}{2}\)</span> is satisfied not just by <span class="math inline">\(\frac{\pi}{6}\)</span> but by <span class="math inline">\(\frac{5\pi}{6}\)</span>, and by infinitely many others. For these inverses to be actual functions, we must impose restrictions on sine, cosine, and tangent so that any unique input to these functions has a unique output.</p>
+</section>
+<section id="principal-values" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="principal-values"><span class="header-section-number">3.2</span> Principal Values</h2>
+<p>These restrictions manifest in something called the principal value branch, or the principal interval. The intervals define the single agreed-upon output angle chosen from the infinitely many that would technically satisfy the equation. These outputs are called principal values. Just as <span class="math inline">\(\sqrt{4}\)</span> returns <span class="math inline">\(+2\)</span> by convention rather than <span class="math inline">\(-2\)</span>, <span class="math inline">\(\arcsin\!\left(\frac{1}{2}\right)\)</span> returns <span class="math inline">\(\frac{\pi}{6}\)</span> rather than <span class="math inline">\(\frac{5\pi}{6}\)</span> because <span class="math inline">\(\frac{\pi}{6}\)</span> falls within the principal interval <span class="math inline">\(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\)</span>. Without a principal interval for each primary trig function, it would be impossible to have inverses of these functions as we would get infinitely many answers for any given degree.</p>
+</section>
+<section id="the-principal-intervals-for-sine-cosine-and-tangent" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="the-principal-intervals-for-sine-cosine-and-tangent"><span class="header-section-number">3.3</span> The Principal Intervals for Sine, Cosine, and Tangent</h2>
+<p>The following graphs show each inverse function as a restricted slice of its corresponding trigonometric function:</p>
+<!--This satisfies the property of inverse functions that says a function must beeach unique input has a unique output. the **principal values** of each inverse function, or, the single agreed-upon output angle chosen from the infinitely many that would technically satisfy the equation. Just as $\sqrt{4}$ returns $+2$ by convention rather than $-2$, $\arcsin\!\left(\frac{1}{2}\right)$ returns $\frac{\pi}{6}$ rather than $\frac{5\pi}{6}$ because $\frac{\pi}{6}$ falls within the principal interval $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.
+
+However, a subtlety arises immediately. Since sine, cosine, and tangent are periodic functions, each ratio corresponds to infinitely many angles.  $\sin(\theta) = \frac{1}{2}$ is satisfied not just by $\frac{\pi}{6}$ but by $\frac{5\pi}{6}$, and by infinitely many others. For a function to be invertible, it must return exactly one value, so we restrict each trig function to a specific interval where it is one-to-one before defining its inverse. These restricted intervals define the **principal values** of each inverse function, or, the single agreed-upon output angle chosen from the infinitely many that would technically satisfy the equation. Just as $\sqrt{4}$ returns $+2$ by convention rather than $-2$, $\arcsin\!\left(\frac{1}{2}\right)$ returns $\frac{\pi}{6}$ rather than $\frac{5\pi}{6}$ because $\frac{\pi}{6}$ falls within the principal interval $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.
+-->
+<div id="a70f4be9" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="inverse_trig_files/figure-html/cell-2-output-1.png" width="662" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="d6b5ea00" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="inverse_trig_files/figure-html/cell-3-output-1.png" width="662" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="b9804b69" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="inverse_trig_files/figure-html/cell-4-output-1.png" width="662" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<!--Notes for the future: maybe add actual inverse function graphs separately instead of just the restricted original function graph version.-->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -169,7 +169,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../trig/inverse_trig.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></span></a>
   </div>
 </li>
       </ul>
@@ -223,12 +223,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../econ/supply_demand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Supply and Demand</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -268,37 +262,69 @@ window.Quarto = {
 </header>
 
 
+<style>
+mjx-container[display="true"] {
+  text-align: left !important;
+  margin-left: 1em !important;
+}
+</style>
 <section id="derivatives" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="derivatives"><span class="header-section-number">4.1</span> Derivatives</h2>
-<p>A derivative measures the instantaneous rate of change of a function. At any given point, the derivative is the slope of the line tangent to that point.</p>
+<p>A derivative measures the instantaneous rate of change of a function. At any given point, the derivative is the slope of the line tangent to the curve at that point. This is different from the average rate of change between two points, which is the slope of the secant line connecting them. The following graph depicts both concepts:</p>
+<!--Explanation for where derivatives come from but for now going to skip it:
+$$
+m_s = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+$$
+
+As the two points grow closer together, the secant line approaches the 
+tangent line — and the average rate of change approaches the instantaneous 
+rate of change. This limiting process is the foundation of the derivative:
+
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+
+The derivative $f'(x)$ gives the slope of the tangent line at any point 
+$x$. The average rate of change $m_s$ gives the slope of the secant line 
+between two fixed points. The derivative is what the average rate of change 
+*becomes* as those two points collapse into one.-->
+<div id="2c952f6f" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="derivatives_files/figure-html/cell-2-output-1.png" width="652" height="374" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="differentiation-rules" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="differentiation-rules"><span class="header-section-number">4.2</span> Differentiation Rules</h2>
-<p><span class="math display">\[
-\frac{d}{dx}(a)=0
-\]</span> <span class="math display">\[
-\frac{d}{dx}(x^n)=nx^{n-1}
-\]</span> <span class="math display">\[
-\frac{d}{dx}(e^x)=e^x
-\]</span> <span class="math display">\[
-\frac{d}{dx}(a^x)=a^x \ln(a)
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\ln(x))=\frac{1}{x}
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\log_a x)=\frac{1}{x}\cdot\frac{1}{\ln(a)}
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\sin(x))=\cos(x)
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\cos(x))=-\sin(x)
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\tan(x))=\sec^2(x)
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\sec(x))=\sec(x)\tan(x)
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\csc(x))=-\csc(x)\cot(x)
-\]</span> <span class="math display">\[
-\frac{d}{dx}(\cot(x))=-\csc^2(x)
-\]</span></p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Constant &amp; Power</strong> <span class="math display">\[\frac{d}{dx}(a)=0\]</span> <span class="math display">\[\frac{d}{dx}(x^n)=nx^{n-1}\]</span></p>
+<p><strong>Exponential &amp; Logarithmic</strong> <span class="math display">\[\frac{d}{dx}(e^x)=e^x\]</span> <span class="math display">\[\frac{d}{dx}(a^x)=a^x \ln(a)\]</span> <span class="math display">\[\frac{d}{dx}(\ln x)=\frac{1}{x}\]</span> <span class="math display">\[\frac{d}{dx}(\log_a x)=\frac{1}{x\ln(a)}\]</span></p>
+<p><strong>Inverse Trigonometric</strong> <span class="math display">\[\frac{d}{dx}(\arcsin x)=\frac{1}{\sqrt{1-x^2}}\]</span> <span class="math display">\[\frac{d}{dx}(\arccos x)=\frac{-1}{\sqrt{1-x^2}}\]</span> <span class="math display">\[\frac{d}{dx}(\arctan x)=\frac{1}{1+x^2}\]</span></p>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:48%;">
+<p><strong>Trigonometric</strong> <span class="math display">\[\frac{d}{dx}(\sin x)=\cos x\]</span> <span class="math display">\[\frac{d}{dx}(\cos x)=-\sin x\]</span> <span class="math display">\[\frac{d}{dx}(\tan x)=\sec^2 x\]</span> <span class="math display">\[\frac{d}{dx}(\sec x)=\sec x\tan x\]</span> <span class="math display">\[\frac{d}{dx}(\csc x)=-\csc x\cot x\]</span> <span class="math display">\[\frac{d}{dx}(\cot x)=-\csc^2 x\]</span></p>
+<p><strong>Domain Restrictions</strong> Recall the three general rules that restrict a domain:</p>
+<ol type="1">
+<li>Denominators: <span class="math inline">\(d \neq 0\)</span></li>
+<li>Even roots: expression inside <span class="math inline">\(\geq 0\)</span></li>
+<li>Logarithms: expression inside <span class="math inline">\(&gt; 0\)</span></li>
+</ol>
+<p>Several derivative formulas carry implicit domain restrictions or points where the formula breaks down and the function is not differentiable. This does not mean the function itself is necessarily discontinuous at those points, but rather that the derivative fails to exist there. Recognizing which rules carry these restrictions is an important part of analyzing the full behavior of a function.</p>
+<!--These restrictions apply when determining the domain of a derivative. 
+Note that domain restrictions on a derivative do not prevent differentiation 
+— they define *where* the resulting formula is valid. A function may exist 
+at a point where its derivative does not. When the derivative formula breaks 
+down at a boundary (such as a zero denominator or negative radicand), the 
+function is not differentiable at that point even if it is defined there.
+-->
+</div>
+</div>
 
 
 </section>
@@ -706,8 +732,8 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../trig/inverse_trig.html" class="pagination-link" aria-label="Inverse Trigonometric Functions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></span>
+      <a href="../trig/inverse_trig.html" class="pagination-link" aria-label="Inverse Trigonometry">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

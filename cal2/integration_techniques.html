@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -140,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../trig/inverse_trig.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></span></a>
   </div>
 </li>
       </ul>
@@ -194,12 +223,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../econ/supply_demand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Supply and Demand</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -207,8 +230,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-note-on-the-nature-of-integration" id="toc-a-note-on-the-nature-of-integration" class="nav-link active" data-scroll-target="#a-note-on-the-nature-of-integration">A Note on the Nature of Integration</a></li>
+  <li><a href="#integration-by-substitution" id="toc-integration-by-substitution" class="nav-link" data-scroll-target="#integration-by-substitution"><span class="header-section-number">5.1</span> Integration by Substitution</a>
+  <ul class="collapse">
+  <li><a href="#choosing-u-general-heuristics" id="toc-choosing-u-general-heuristics" class="nav-link" data-scroll-target="#choosing-u-general-heuristics"><span class="header-section-number">5.1.1</span> Choosing <span class="math inline">\(u\)</span>: General Heuristics</a></li>
+  <li><a href="#strategy-1-basic-u-substitution" id="toc-strategy-1-basic-u-substitution" class="nav-link" data-scroll-target="#strategy-1-basic-u-substitution"><span class="header-section-number">5.1.2</span> Strategy 1: Basic U-Substitution</a></li>
+  <li><a href="#strategy-2-single-exponential-form" id="toc-strategy-2-single-exponential-form" class="nav-link" data-scroll-target="#strategy-2-single-exponential-form"><span class="header-section-number">5.1.3</span> Strategy 2: Single Exponential Form</a></li>
+  <li><a href="#strategy-3-non-reducible-fractions" id="toc-strategy-3-non-reducible-fractions" class="nav-link" data-scroll-target="#strategy-3-non-reducible-fractions"><span class="header-section-number">5.1.4</span> Strategy 3: Non-Reducible Fractions</a></li>
+  <li><a href="#strategy-4-logarithmic-terms" id="toc-strategy-4-logarithmic-terms" class="nav-link" data-scroll-target="#strategy-4-logarithmic-terms"><span class="header-section-number">5.1.5</span> Strategy 4: Logarithmic Terms</a></li>
+  </ul></li>
+  <li><a href="#integration-by-parts" id="toc-integration-by-parts" class="nav-link" data-scroll-target="#integration-by-parts"><span class="header-section-number">5.2</span> Integration by parts</a></li>
+  <li><a href="#trig-substitution" id="toc-trig-substitution" class="nav-link" data-scroll-target="#trig-substitution"><span class="header-section-number">5.3</span> Trig-Substitution</a></li>
+  <li><a href="#partial-fraction-decomposition" id="toc-partial-fraction-decomposition" class="nav-link" data-scroll-target="#partial-fraction-decomposition"><span class="header-section-number">5.4</span> Partial Fraction Decomposition</a></li>
+  <li><a href="#improper-integrals" id="toc-improper-integrals" class="nav-link" data-scroll-target="#improper-integrals"><span class="header-section-number">5.5</span> Improper Integrals</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -232,8 +273,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="a-note-on-the-nature-of-integration" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="a-note-on-the-nature-of-integration">A Note on the Nature of Integration</h2>
+<p>Integration is often introduced by relating it to differentiation, and while it is technically the inverse of differentiation, the actual process of integration is quite a distinct experience. Differentiation has clean, mechanical rules that reliably produce an answer for any function you encounter. The process of taking a derivative is quite linear: choose from a (short) list of formulaic rules, apply the rules, and simplify your answer with a bit of algebra. Integration, on the other hand, demands a certain level of critical thinking and pattern recognition, and you will soon see that not every integral has a closed-form solution at all. This is all to say that you will save yourself some shock if you avoid building your expectations for integration around the notion that it will be the opposite of taking a derivative.</p>
+<p>The process of integration can look and feel a lot like failure. Improving your skills will require you to let go of a desire for perfection and just choose a strategy to dive into the problem-solving process, even if it may be the incorrect one. It is normal to try something, get stuck, backtrack, and try again many times until you arrive at the answer. Learning to integrate is largely learning to tolerate uncertainty and to be resilient amidst the presence of failure.</p>
+<p>It is common for there to be a learning curve as we transition from differentiation to integration, but don’t let this discourage you; everytime you solve one of these puzzles, you expand the limits of your mind, add new tools to your toolkit, and get a step closer to mathematical maturity.</p>
+<p>The strategies outlined in this chapter cover the most common forms you will encounter, but knowing <em>which</em> strategy to apply (or whether to combine them) is a skill that develops through practice and through pushing through failed attempts.</p>
+</section>
+<section id="integration-by-substitution" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="integration-by-substitution"><span class="header-section-number">5.1</span> Integration by Substitution</h2>
+<p>Often referred to as “u-substitution” or “u-sub”, integration by substitution is a technique that essentially undoes the chain rule to evaluate complex integrals. Remember that chain rule is our technique for differentiating composite functions, i.e., a function inside of a function. Similarly, we can use u-sub to find antiderivatives of composite functions.</p>
+<p>Take the following integrand as an example: <span class="math inline">\(\int 2x(x^2+3)^7 \,dx\)</span> Recognize that it takes the classic form of a composite function: <span class="math inline">\(((f \circ g)(x))\)</span>, where <span class="math inline">\((x^2+3)\)</span> is our <span class="math inline">\(g(x)\)</span>, or our “inner” function in this case. In a similar way to the chain rule, we will choose this part of the function to be our <span class="math inline">\(u\)</span>.</p>
+<section id="choosing-u-general-heuristics" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="choosing-u-general-heuristics"><span class="header-section-number">5.1.1</span> Choosing <span class="math inline">\(u\)</span>: General Heuristics</h3>
+<p>The most important step in u-substitution is recognizing which part of the integrand to set as <span class="math inline">\(u\)</span>. The following strategies cover the most common forms:</p>
+<ul>
+<li><strong>Composite functions</strong> — choose the inner function (Strategy 1)</li>
+<li><strong>Exponential terms</strong> — choose the exponent (Strategy 2)<br>
+</li>
+<li><strong>Fractions</strong> — choose the denominator when its derivative appears in the numerator (Strategy 3)</li>
+<li><strong>Logarithmic terms</strong> — choose the argument of the log (Strategy 4)</li>
+</ul>
+</section>
+<section id="strategy-1-basic-u-substitution" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="strategy-1-basic-u-substitution"><span class="header-section-number">5.1.2</span> Strategy 1: Basic U-Substitution</h3>
+<p><strong>Example:</strong> Evaluate <span class="math inline">\(\int 2x(x^2+3)^7 \,dx\)</span></p>
+<p>Recognize that <span class="math inline">\((x^2+3)\)</span> is our inner function <span class="math inline">\(g(x)\)</span>, so we set <span class="math inline">\(u = x^2 + 3\)</span>.</p>
+<p><strong>Step 1: Set <span class="math inline">\(u\)</span> equal to the chosen expression</strong> <span class="math display">\[u = x^2+3\]</span></p>
+<p><strong>Step 2: Differentiate with respect to <span class="math inline">\(x\)</span> and isolate <span class="math inline">\(dx\)</span></strong> <span class="math display">\[\frac{du}{dx} = 2x \implies dx = \frac{du}{2x}\]</span></p>
+<p><strong>Step 3: Substitute <span class="math inline">\(u\)</span> and <span class="math inline">\(dx\)</span> into the integral</strong> <span class="math display">\[\int 2x(u)^7 \frac{du}{2x}\]</span></p>
+<p>Notice the <span class="math inline">\(2x\)</span> terms cancel, leaving: <span class="math display">\[\int u^7 \,du\]</span></p>
+<p><strong>Step 4: Integrate with respect to <span class="math inline">\(u\)</span></strong> <span class="math display">\[= \frac{u^8}{8} + C\]</span></p>
+<p><strong>Step 5: Substitute the original expression back in for <span class="math inline">\(u\)</span></strong> <span class="math display">\[= \frac{1}{8}(x^2+3)^8 + C\]</span></p>
+<p>Therefore: <span class="math display">\[\int 2x(x^2+3)^7 \,dx = \frac{1}{8}(x^2+3)^8 + C\]</span></p>
+</section>
+<section id="strategy-2-single-exponential-form" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="strategy-2-single-exponential-form"><span class="header-section-number">5.1.3</span> Strategy 2: Single Exponential Form</h3>
+<p>If there is a single exponential term, we often let the exponent be the <span class="math inline">\(u\)</span>.</p>
+<p><strong>Example</strong> Evaluate <span class="math inline">\(\int x^4e^{{7x}^{5}}\,dx\)</span></p>
+<p>Here, recognize that our exponential term is raised to the power <span class="math inline">\({7x}^{5}\)</span>. Let’s choose this as our <span class="math inline">\(u\)</span> and proceed with the following u-sub steps as we did in the previous example.</p>
+<p><strong>Step 1: Set <span class="math inline">\(u\)</span> equal to the chosen expression</strong> <span class="math display">\[u = {7x}^{5}\]</span></p>
+<p><strong>Step 2: Differentiate with respect to <span class="math inline">\(x\)</span> and isolate <span class="math inline">\(dx\)</span></strong> <span class="math display">\[\frac{du}{dx} = 35x^4 \implies dx = \frac{du}{35x^4}\]</span></p>
+<p><strong>Step 3: Substitute <span class="math inline">\(u\)</span> and <span class="math inline">\(dx\)</span> into the integral</strong> <span class="math display">\[\int x^4e^u\frac{du}{35x^4}\]</span></p>
+<p>Notice the <span class="math inline">\(x^4\)</span> terms cancel, leaving: <span class="math display">\[\int e^u\frac{du}{35}\,du\]</span></p>
+<p><strong>Step 4: Integrate with respect to <span class="math inline">\(u\)</span></strong> <span class="math display">\[= \frac{1}{35}e^u + C\]</span></p>
+<p><strong>Step 5: Substitute the original expression back in for <span class="math inline">\(u\)</span></strong> <span class="math display">\[= \frac{1}{35}e^{{7x}^{5}} + C\]</span></p>
+<p>Therefore: <span class="math display">\[\int x^4e^{{7x}^{5}}\,dx = \frac{1}{35}e^{{7x}^{5}} + C\]</span></p>
+</section>
+<section id="strategy-3-non-reducible-fractions" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="strategy-3-non-reducible-fractions"><span class="header-section-number">5.1.4</span> Strategy 3: Non-Reducible Fractions</h3>
+<p>If we see a fraction we can’t reduce, then we often let the entire denominator be <span class="math inline">\(u\)</span>.</p>
+<p><strong>Example 1</strong> Evaluate <span class="math inline">\(\int \frac{3x^2+7}{x^3+7x}\,dx\)</span></p>
+<p>There’s no factoring we can do to get this integrand into a simpler form so let’s choose the denominator <span class="math inline">\(x^3+7x\)</span> as our <span class="math inline">\(u\)</span> and proceed with our u-sub steps.</p>
+<p><strong>Step 1: Set <span class="math inline">\(u\)</span> equal to the chosen expression</strong> <span class="math display">\[u = x^3+7x\]</span></p>
+<p><strong>Step 2: Differentiate with respect to <span class="math inline">\(x\)</span> and isolate <span class="math inline">\(dx\)</span></strong> <span class="math display">\[\frac{du}{dx} = 3x^2+7 \implies dx = \frac{du}{3x^2+7}\]</span></p>
+<p><strong>Step 3: Substitute <span class="math inline">\(u\)</span> and <span class="math inline">\(dx\)</span> into the integral</strong> <span class="math display">\[\int \frac{3x^2+7}{u} \cdot \frac{du}{3x^2+7}\]</span></p>
+<p>Notice the <span class="math inline">\(x^4\)</span> terms cancel, leaving: <span class="math display">\[\int \frac{1}{u}\,du\]</span></p>
+<p><strong>Step 4: Integrate with respect to <span class="math inline">\(u\)</span></strong> <span class="math display">\[\int u^{-1}\,du \implies ln|u| + C\]</span></p>
+<p><strong>Step 5: Substitute the original expression back in for <span class="math inline">\(u\)</span></strong> <span class="math display">\[= ln|x^3+7x| + C\]</span></p>
+<p>Therefore: <span class="math display">\[\int \frac{3x^2+7}{x^3+7x}\,dx = ln|x^3+7x| + C\]</span></p>
+<p><strong>Example 2</strong> Evaluate <span class="math inline">\(\int \tan x\,dx\)</span></p>
+<p>This integrand may not appear as a fraction on the surface, but let’s recall one of our trig identities and recognize that <span class="math inline">\(\tan x\ = \frac{\sin x}{\cos x}\)</span>, rewriting the integral as: <span class="math display">\[\int \frac{\sin x}{\cos x}\,dx\]</span> Because of this preliminary rewrite, we can now apply the same strategy, choosing the denominator $x$ as our <span class="math inline">\(u\)</span> and proceeding with u-sub steps.</p>
+<p><strong>Step 1: Set <span class="math inline">\(u\)</span> equal to the chosen expression</strong> <span class="math display">\[u = \cos x\]</span></p>
+<p><strong>Step 2: Differentiate with respect to <span class="math inline">\(x\)</span> and isolate <span class="math inline">\(dx\)</span></strong> <span class="math display">\[\frac{du}{dx} = -\sin x \implies dx = \frac{du}{-\sin x}\]</span></p>
+<p><strong>Step 3: Substitute <span class="math inline">\(u\)</span> and <span class="math inline">\(dx\)</span> into the integral</strong> <span class="math display">\[\int \frac{\sin x}{u} \cdot \frac{du}{-\sin x}\]</span></p>
+<p>Notice the <span class="math inline">\(\sin x\)</span> terms cancel, leaving: <span class="math display">\[\int -\frac{1}{u}\,du\]</span></p>
+<p><strong>Step 4: Integrate with respect to <span class="math inline">\(u\)</span></strong> <span class="math display">\[= -ln|u| + C\]</span></p>
+<p><strong>Step 5: Substitute the original expression back in for <span class="math inline">\(u\)</span></strong> <span class="math display">\[= -ln|\cos x| + C\]</span></p>
+<p>Therefore: <span class="math display">\[\int \tan x\,dx = \int \frac{\sin x}{\cos x}\,dx = -ln|\cos x| + C\]</span></p>
+<p>&lt;!–&gt; A note as we begin working with integrals: This is only the beginning of some of the “outside-of-the-box” thinking skills Calculus II demands. It is common for there to be a learning curve as we transition from differentiation to integration, but don’t let this discourage you; everytime we solve these puzzles, we expand the limits of our mind, add new tools to our toolkit, and get a step closer to mathematical maturity.–&gt;</p>
+</section>
+<section id="strategy-4-logarithmic-terms" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="strategy-4-logarithmic-terms"><span class="header-section-number">5.1.5</span> Strategy 4: Logarithmic Terms</h3>
+<p>If there is a log term as part of a multiplication or division, we often let the entire term with the log be <span class="math inline">\(u\)</span>.</p>
+<p><strong>Example 1</strong> Evaluate <span class="math inline">\(\int \frac{\ln(x)+3}{x}\,dx\)</span></p>
+<p>It may be tempting to choose <span class="math inline">\(x\)</span> as our <span class="math inline">\(u\)</span> — after all, we just covered this as our strategy for integrating non-reducible fractions. However, the log term in the numerator complicates things. A natural question arises: how do we choose <span class="math inline">\(u\)</span> when the integral doesn’t obviously fit a pattern we recognize? A useful approach when you get stuck is to choose the “unknown” term—that is, the term for which we don’t have a clean antiderivative formula—as our <span class="math inline">\(u\)</span>. Remembering our antiderivative rules, we can recognize <span class="math inline">\(\ln(x)\)</span> as the unknown piece of this integrand. Since the constant <span class="math inline">\(3\)</span> is simply added to <span class="math inline">\(\ln(x)\)</span> and the two are inseparable in the numerator, it is natural to treat the entire expression <span class="math inline">\(\ln(x) + 3\)</span> as our <span class="math inline">\(u\)</span>. As we will see, this choice keeps our substitution clean and allows all original variables to cancel neatly.</p>
+<p><strong>Step 1: Set <span class="math inline">\(u\)</span> equal to the chosen expression</strong> <span class="math display">\[u = \ln(x)+3\]</span></p>
+<p><strong>Step 2: Differentiate with respect to <span class="math inline">\(x\)</span> and isolate <span class="math inline">\(dx\)</span></strong> <span class="math display">\[\frac{du}{dx} = \frac{1}{x} \implies dx = du \cdot x\]</span></p>
+<p><strong>Step 3: Substitute <span class="math inline">\(u\)</span> and <span class="math inline">\(dx\)</span> into the integral</strong> <span class="math display">\[\int \frac{u}{x}\, du \cdot x\]</span></p>
+<p>Notice the <span class="math inline">\(x\)</span> terms cancel, leaving: <span class="math display">\[\int u \cdot du\]</span></p>
+<p><strong>Step 4: Integrate with respect to <span class="math inline">\(u\)</span></strong> <span class="math display">\[ \frac{u^2}{2} + C\]</span></p>
+<p><strong>Step 5: Substitute the original expression back in for <span class="math inline">\(u\)</span></strong> <span class="math display">\[= \frac{(\ln(x)+3)^2}{2} + C \implies =\frac{1}{2}(\ln(x)+3)^2+C\]</span></p>
+<p>Therefore: <span class="math display">\[\int \frac{\ln(x)+3}{x}\,dx = \frac{1}{2}(\ln(x)+3)^2+C\]</span></p>
+</section>
+</section>
+<section id="integration-by-parts" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="integration-by-parts"><span class="header-section-number">5.2</span> Integration by parts</h2>
+<p>Think of this technique as a “reverse product rule”.</p>
+</section>
+<section id="trig-substitution" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="trig-substitution"><span class="header-section-number">5.3</span> Trig-Substitution</h2>
+</section>
+<section id="partial-fraction-decomposition" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="partial-fraction-decomposition"><span class="header-section-number">5.4</span> Partial Fraction Decomposition</h2>
+</section>
+<section id="improper-integrals" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="improper-integrals"><span class="header-section-number">5.5</span> Improper Integrals</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

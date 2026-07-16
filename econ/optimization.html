@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../econ/supply_demand.html" rel="next">
 <link href="../cal2/integration_techniques.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -140,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../trig/inverse_trig.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometric Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inverse Trigonometry</span></span></a>
   </div>
 </li>
       </ul>
@@ -194,12 +193,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../econ/supply_demand.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Supply and Demand</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -207,8 +200,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#key-functions-in-economic-optimization" id="toc-key-functions-in-economic-optimization" class="nav-link active" data-scroll-target="#key-functions-in-economic-optimization"><span class="header-section-number">6.1</span> Key Functions in Economic Optimization</a>
+  <ul class="collapse">
+  <li><a href="#cost-functions" id="toc-cost-functions" class="nav-link" data-scroll-target="#cost-functions"><span class="header-section-number">6.1.1</span> Cost Functions</a></li>
+  <li><a href="#revenue-functions" id="toc-revenue-functions" class="nav-link" data-scroll-target="#revenue-functions"><span class="header-section-number">6.1.2</span> Revenue Functions</a></li>
+  <li><a href="#profit-functions" id="toc-profit-functions" class="nav-link" data-scroll-target="#profit-functions"><span class="header-section-number">6.1.3</span> Profit Functions</a></li>
+  </ul></li>
+  <li><a href="#marginal-analysis" id="toc-marginal-analysis" class="nav-link" data-scroll-target="#marginal-analysis"><span class="header-section-number">6.2</span> Marginal Analysis</a>
+  <ul class="collapse">
+  <li><a href="#marginal-cost" id="toc-marginal-cost" class="nav-link" data-scroll-target="#marginal-cost"><span class="header-section-number">6.2.1</span> Marginal Cost</a></li>
+  <li><a href="#marginal-revenue" id="toc-marginal-revenue" class="nav-link" data-scroll-target="#marginal-revenue"><span class="header-section-number">6.2.2</span> Marginal Revenue</a></li>
+  <li><a href="#marginal-profit" id="toc-marginal-profit" class="nav-link" data-scroll-target="#marginal-profit"><span class="header-section-number">6.2.3</span> Marginal Profit</a></li>
+  </ul></li>
+  <li><a href="#profit-maximization" id="toc-profit-maximization" class="nav-link" data-scroll-target="#profit-maximization"><span class="header-section-number">6.3</span> Profit Maximization</a></li>
+  <li><a href="#the-role-of-constraints" id="toc-the-role-of-constraints" class="nav-link" data-scroll-target="#the-role-of-constraints"><span class="header-section-number">6.4</span> The Role of Constraints</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -232,8 +244,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Optimization is the process of finding the maximum or minimum value of a function in the context of an applied problem. In economics, this translates directly to questions every firm and consumer faces: How much should a firm produce to maximize profit? At what price is revenue maximized? How does a consumer allocate a fixed budget to maximize utility? The calculus tools developed in the previous chapter give us a precise, systematic way to answer these questions.</p>
+<section id="key-functions-in-economic-optimization" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="key-functions-in-economic-optimization"><span class="header-section-number">6.1</span> Key Functions in Economic Optimization</h2>
+<section id="cost-functions" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="cost-functions"><span class="header-section-number">6.1.1</span> Cost Functions</h3>
+</section>
+<section id="revenue-functions" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="revenue-functions"><span class="header-section-number">6.1.2</span> Revenue Functions</h3>
+</section>
+<section id="profit-functions" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="profit-functions"><span class="header-section-number">6.1.3</span> Profit Functions</h3>
+</section>
+</section>
+<section id="marginal-analysis" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="marginal-analysis"><span class="header-section-number">6.2</span> Marginal Analysis</h2>
+<section id="marginal-cost" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="marginal-cost"><span class="header-section-number">6.2.1</span> Marginal Cost</h3>
+</section>
+<section id="marginal-revenue" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="marginal-revenue"><span class="header-section-number">6.2.2</span> Marginal Revenue</h3>
+</section>
+<section id="marginal-profit" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="marginal-profit"><span class="header-section-number">6.2.3</span> Marginal Profit</h3>
+</section>
+</section>
+<section id="profit-maximization" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="profit-maximization"><span class="header-section-number">6.3</span> Profit Maximization</h2>
+</section>
+<section id="the-role-of-constraints" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="the-role-of-constraints"><span class="header-section-number">6.4</span> The Role of Constraints</h2>
+<p><em>To be continued… optimization under constraints and an introduction to Lagrangian methods.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -643,9 +687,6 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../econ/supply_demand.html" class="pagination-link" aria-label="Supply and Demand">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Supply and Demand</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
