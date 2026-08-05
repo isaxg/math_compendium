@@ -153,3 +153,61 @@ function is not differentiable at that point even if it is defined there.
 :::
 
 ::::
+
+## Product & Quotient Rules
+
+In order to take the derivative of a function that is multiplied or divided by another function, such as is the case when $y=f(x) \cdot g(x)$ or $y = \frac{f(x)}{g(x)}$, we must introduce the product and quotient rules. Note that the derivative of a function multiplied by another function is **not** the same as the derivative of one function multiplied by the derivative of the other. The structure of the following rules reflects the more nuanced relationship between the two functions.\
+
+Notice that we are switching from Leibniz notation, $\frac{d}{dx}$, to Lagrange notation, where $f'(x)$ denotes the derivative of $f(x)$, $g'(x)$ the derivative of $g(x)$, and so on. These are equivalent and used interchangeably throughout calculus and economics. Depending on the field of economics and/or the functions you are modeling, one notation may be more common (or even preferred) for the sake of simplicity and clarity. 
+
+$$
+\begin{aligned}
+\text{Product:} \quad y' &= f'(x) \cdot g(x) + g'(x) \cdot f(x) \\[8pt]
+\text{Quotient:} \quad y' &= \frac{(f'(x) \cdot g(x)) - (f(x) \cdot g'(x))}{(g(x))^2}
+\end{aligned}
+$$
+
+**Example:** Determine $y'$ for $y = 3^x \cdot \ln(x)$
+
+Here $f(x) = 3^x$ and $g(x) = \ln(x)$, so:
+
+$$
+\begin{aligned}
+f'(x) &= 3^x \cdot \ln(3) \\
+g'(x) &= \frac{1}{x}
+\end{aligned}
+$$
+
+Applying the product rule:
+
+$$
+\begin{aligned}
+y' &= f'(x) \cdot g(x) + g'(x) \cdot f(x) \\[6pt]
+   &= 3^x \cdot \ln(3) \cdot \ln(x) + \frac{1}{x} \cdot 3^x \\[6pt]
+   &= \boxed{3^x\left[\ln(3) \cdot \ln(x) + \frac{1}{x}\right]}
+\end{aligned}
+$$
+
+**Example:** Determine $y'$ for $y = \frac{\sin x}{x^2 + 3x}$
+
+Here $f(x) = \sin x$ and $g(x) = x^2 + 3x$, so:
+
+$$
+\begin{aligned}
+f'(x) &= \cos x \\
+g'(x) &= 2x + 3
+\end{aligned}
+$$
+
+Applying the quotient rule:
+
+$$
+\begin{aligned}
+y' &= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
+   &= \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
+\end{aligned}
+$$
+
+
+
+
