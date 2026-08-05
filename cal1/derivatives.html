@@ -237,6 +237,7 @@ window.Quarto = {
   <ul>
   <li><a href="#derivatives" id="toc-derivatives" class="nav-link active" data-scroll-target="#derivatives"><span class="header-section-number">4.1</span> Derivatives</a></li>
   <li><a href="#differentiation-rules" id="toc-differentiation-rules" class="nav-link" data-scroll-target="#differentiation-rules"><span class="header-section-number">4.2</span> Differentiation Rules</a></li>
+  <li><a href="#product-quotient-rules" id="toc-product-quotient-rules" class="nav-link" data-scroll-target="#product-quotient-rules"><span class="header-section-number">4.3</span> Product &amp; Quotient Rules</a></li>
   </ul>
 </nav>
     </div>
@@ -288,7 +289,7 @@ The derivative $f'(x)$ gives the slope of the tangent line at any point
 $x$. The average rate of change $m_s$ gives the slope of the secant line 
 between two fixed points. The derivative is what the average rate of change 
 *becomes* as those two points collapse into one.-->
-<div id="2c952f6f" class="cell" data-execution_count="1">
+<div id="b82aec26" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -325,6 +326,49 @@ function is not differentiable at that point even if it is defined there.
 -->
 </div>
 </div>
+</section>
+<section id="product-quotient-rules" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="product-quotient-rules"><span class="header-section-number">4.3</span> Product &amp; Quotient Rules</h2>
+<p>In order to take the derivative of a function that is multiplied or divided by another function, such as is the case when <span class="math inline">\(y=f(x) \cdot g(x)\)</span> or <span class="math inline">\(y = \frac{f(x)}{g(x)}\)</span>, we must introduce the product and quotient rules. Note that the derivative of a function multiplied by another function is <strong>not</strong> the same as the derivative of one function multiplied by the derivative of the other. The structure of the following rules reflects the more nuanced relationship between the two functions.<br>
+</p>
+<p>Notice that we are switching from Leibniz notation, <span class="math inline">\(\frac{d}{dx}\)</span>, to Lagrange notation, where <span class="math inline">\(f'(x)\)</span> denotes the derivative of <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g'(x)\)</span> the derivative of <span class="math inline">\(g(x)\)</span>, and so on. These are equivalent and used interchangeably throughout calculus and economics. Depending on the field of economics and/or the functions you are modeling, one notation may be more common (or even preferred) for the sake of simplicity and clarity.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Product:} \quad y' &amp;= f'(x) \cdot g(x) + g'(x) \cdot f(x) \\[8pt]
+\text{Quotient:} \quad y' &amp;= \frac{(f'(x) \cdot g(x)) - (f(x) \cdot g'(x))}{(g(x))^2}
+\end{aligned}
+\]</span></p>
+<p><strong>Example:</strong> Determine <span class="math inline">\(y'\)</span> for <span class="math inline">\(y = 3^x \cdot \ln(x)\)</span></p>
+<p>Here <span class="math inline">\(f(x) = 3^x\)</span> and <span class="math inline">\(g(x) = \ln(x)\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f'(x) &amp;= 3^x \cdot \ln(3) \\
+g'(x) &amp;= \frac{1}{x}
+\end{aligned}
+\]</span></p>
+<p>Applying the product rule:</p>
+<p><span class="math display">\[
+\begin{aligned}
+y' &amp;= f'(x) \cdot g(x) + g'(x) \cdot f(x) \\[6pt]
+   &amp;= 3^x \cdot \ln(3) \cdot \ln(x) + \frac{1}{x} \cdot 3^x \\[6pt]
+   &amp;= \boxed{3^x\left[\ln(3) \cdot \ln(x) + \frac{1}{x}\right]}
+\end{aligned}
+\]</span></p>
+<p><strong>Example:</strong> Determine <span class="math inline">\(y'\)</span> for <span class="math inline">\(y = \frac{\sin x}{x^2 + 3x}\)</span></p>
+<p>Here <span class="math inline">\(f(x) = \sin x\)</span> and <span class="math inline">\(g(x) = x^2 + 3x\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f'(x) &amp;= \cos x \\
+g'(x) &amp;= 2x + 3
+\end{aligned}
+\]</span></p>
+<p>Applying the quotient rule:</p>
+<p><span class="math display">\[
+\begin{aligned}
+y' &amp;= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
+   &amp;= \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
+\end{aligned}
+\]</span></p>
 
 
 </section>
