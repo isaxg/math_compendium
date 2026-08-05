@@ -238,6 +238,7 @@ window.Quarto = {
   <li><a href="#derivatives" id="toc-derivatives" class="nav-link active" data-scroll-target="#derivatives"><span class="header-section-number">4.1</span> Derivatives</a></li>
   <li><a href="#differentiation-rules" id="toc-differentiation-rules" class="nav-link" data-scroll-target="#differentiation-rules"><span class="header-section-number">4.2</span> Differentiation Rules</a></li>
   <li><a href="#product-quotient-rules" id="toc-product-quotient-rules" class="nav-link" data-scroll-target="#product-quotient-rules"><span class="header-section-number">4.3</span> Product &amp; Quotient Rules</a></li>
+  <li><a href="#chain-rule" id="toc-chain-rule" class="nav-link" data-scroll-target="#chain-rule"><span class="header-section-number">4.4</span> Chain Rule</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +290,7 @@ The derivative $f'(x)$ gives the slope of the tangent line at any point
 $x$. The average rate of change $m_s$ gives the slope of the secant line 
 between two fixed points. The derivative is what the average rate of change 
 *becomes* as those two points collapse into one.-->
-<div id="b82aec26" class="cell" data-execution_count="1">
+<div id="e2eafcca" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -369,6 +370,19 @@ y' &amp;= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
    &amp;= \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
 \end{aligned}
 \]</span></p>
+</section>
+<section id="chain-rule" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="chain-rule"><span class="header-section-number">4.4</span> Chain Rule</h2>
+<p>Oftentimes the function we want to differentiate contains another function within it. These are called <strong>composite functions</strong>, or, a function of the form <span class="math inline">\(h(x) = f(g(x))\)</span>, where <span class="math inline">\(g(x)\)</span> is the “inner” function and <span class="math inline">\(f\)</span> is the “outer” function. The chain rule tells us how to differentiate these:</p>
+<p><span class="math display">\[
+\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)
+\]</span></p>
+<p>Broken down, this rule:</p>
+<ol type="1">
+<li>takes the derivative of the outside function while leaving the inside function alone,</li>
+<li>takes the derivative of the inside function,</li>
+<li>and multiplies the two together.</li>
+</ol>
 
 
 </section>

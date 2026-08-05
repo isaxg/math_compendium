@@ -186,6 +186,17 @@
     ]
   },
   {
+    "objectID": "cal1/derivatives.html#chain-rule",
+    "href": "cal1/derivatives.html#chain-rule",
+    "title": "4  Introduction to Derivatives",
+    "section": "4.4 Chain Rule",
+    "text": "4.4 Chain Rule\nOftentimes the function we want to differentiate contains another function within it. These are called composite functions, or, a function of the form \\(h(x) = f(g(x))\\), where \\(g(x)\\) is the “inner” function and \\(f\\) is the “outer” function. The chain rule tells us how to differentiate these:\n\\[\n\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)\n\\]\nBroken down, this rule:\n\ntakes the derivative of the outside function while leaving the inside function alone,\ntakes the derivative of the inside function,\nand multiplies the two together.",
+    "crumbs": [
+      "Calculus I",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Derivatives</span>"
+    ]
+  },
+  {
     "objectID": "cal2/integration_techniques.html",
     "href": "cal2/integration_techniques.html",
     "title": "5  Integration Techniques",
