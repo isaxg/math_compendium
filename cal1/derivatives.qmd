@@ -208,6 +208,26 @@ y' &= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
 \end{aligned}
 $$
 
+## Chain Rule
+
+Oftentimes the function we want to differentiate contains another function 
+within it. These are called **composite functions**, or, a function of the form 
+$h(x) = f(g(x))$, where $g(x)$ is the "inner" function and $f$ is the 
+"outer" function. The chain rule tells us how to differentiate these:
+
+$$
+\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)
+$$
+
+Broken down, this rule:
+
+1. takes the derivative of the outside function while leaving the inside function alone,
+2. takes the derivative of the inside function,
+3. and multiplies the two together.
+
+
+
+
 
 
 
