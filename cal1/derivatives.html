@@ -254,7 +254,11 @@ window.Quarto = {
   <li><a href="#derivatives" id="toc-derivatives" class="nav-link active" data-scroll-target="#derivatives"><span class="header-section-number">4.1</span> Derivatives</a></li>
   <li><a href="#differentiation-rules" id="toc-differentiation-rules" class="nav-link" data-scroll-target="#differentiation-rules"><span class="header-section-number">4.2</span> Differentiation Rules</a></li>
   <li><a href="#product-quotient-rules" id="toc-product-quotient-rules" class="nav-link" data-scroll-target="#product-quotient-rules"><span class="header-section-number">4.3</span> Product &amp; Quotient Rules</a></li>
-  <li><a href="#chain-rule" id="toc-chain-rule" class="nav-link" data-scroll-target="#chain-rule"><span class="header-section-number">4.4</span> Chain Rule</a></li>
+  <li><a href="#chain-rule" id="toc-chain-rule" class="nav-link" data-scroll-target="#chain-rule"><span class="header-section-number">4.4</span> Chain Rule</a>
+  <ul class="collapse">
+  <li><a href="#chain-rule-version-of-basic-differentiation-rules" id="toc-chain-rule-version-of-basic-differentiation-rules" class="nav-link" data-scroll-target="#chain-rule-version-of-basic-differentiation-rules"><span class="header-section-number">4.4.1</span> Chain Rule Version of Basic Differentiation Rules</a></li>
+  </ul></li>
+  <li><a href="#worked-problems" id="toc-worked-problems" class="nav-link" data-scroll-target="#worked-problems"><span class="header-section-number">4.5</span> Worked Problems</a></li>
   </ul>
 </nav>
     </div>
@@ -281,7 +285,7 @@ window.Quarto = {
 
 
 <style>
-mjx-container[display="true"] {
+.columns mjx-container[display="true"] {
   text-align: left !important;
   margin-left: 1em !important;
 }
@@ -306,7 +310,7 @@ The derivative $f'(x)$ gives the slope of the tangent line at any point
 $x$. The average rate of change $m_s$ gives the slope of the secant line 
 between two fixed points. The derivative is what the average rate of change 
 *becomes* as those two points collapse into one.-->
-<div id="4fbc56bf" class="cell" data-execution_count="1">
+<div id="a8370252" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -356,23 +360,23 @@ function is not differentiable at that point even if it is defined there.
 \end{aligned}
 \]</span></p>
 <p><strong>Example:</strong> Determine <span class="math inline">\(y'\)</span> for <span class="math inline">\(y = 3^x \cdot \ln(x)\)</span></p>
-<p>Here <span class="math inline">\(f(x) = 3^x\)</span> and <span class="math inline">\(g(x) = \ln(x)\)</span>, so:</p>
+<p>Here <strong><span class="math inline">\(f(x) = 3^x\)</span></strong> and <strong><span class="math inline">\(g(x) = \ln(x)\)</span></strong>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 f'(x) &amp;= 3^x \cdot \ln(3) \\
-g'(x) &amp;= \frac{1}{x}
+g'(x) &amp;= \frac{1}{x} \\
 \end{aligned}
 \]</span></p>
 <p>Applying the product rule:</p>
 <p><span class="math display">\[
-\begin{aligned}
-y' &amp;= f'(x) \cdot g(x) + g'(x) \cdot f(x) \\[6pt]
-   &amp;= 3^x \cdot \ln(3) \cdot \ln(x) + \frac{1}{x} \cdot 3^x \\[6pt]
-   &amp;= \boxed{3^x\left[\ln(3) \cdot \ln(x) + \frac{1}{x}\right]}
-\end{aligned}
+y' = f'(x) \cdot g(x) + g'(x) \cdot f(x)
+\]</span> <span class="math display">\[
+y' = 3^x \cdot \ln(3) \cdot \ln(x) + \frac{1}{x} \cdot 3^x
+\]</span> <span class="math display">\[
+y' = \boxed{3^x\left[\ln(3) \cdot \ln(x) + \frac{1}{x}\right]}
 \]</span></p>
 <p><strong>Example:</strong> Determine <span class="math inline">\(y'\)</span> for <span class="math inline">\(y = \frac{\sin x}{x^2 + 3x}\)</span></p>
-<p>Here <span class="math inline">\(f(x) = \sin x\)</span> and <span class="math inline">\(g(x) = x^2 + 3x\)</span>, so:</p>
+<p>Here <strong><span class="math inline">\(f(x) = \sin x\)</span></strong> and <strong><span class="math inline">\(g(x) = x^2 + 3x\)</span></strong>, so:</p>
 <p><span class="math display">\[
 \begin{aligned}
 f'(x) &amp;= \cos x \\
@@ -381,10 +385,9 @@ g'(x) &amp;= 2x + 3
 \]</span></p>
 <p>Applying the quotient rule:</p>
 <p><span class="math display">\[
-\begin{aligned}
-y' &amp;= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
-   &amp;= \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
-\end{aligned}
+y' = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2}
+\]</span> <span class="math display">\[
+y' = \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
 \]</span></p>
 </section>
 <section id="chain-rule" class="level2" data-number="4.4">
@@ -399,6 +402,70 @@ y' &amp;= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
 <li>takes the derivative of the inside function,</li>
 <li>and multiplies the two together.</li>
 </ol>
+<p><strong>Example:</strong> Determine <span class="math inline">\(h'(x)\)</span> for <span class="math inline">\(h(x) = \sqrt{x^2+3x}\)</span></p>
+<p>Here <span class="math inline">\(g(x) = x^2 + 3x\)</span> and <span class="math inline">\(f(u) = \sqrt{u} = u^{1/2}\)</span>, so:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f'(u) &amp;= \frac{1}{2}u^{-1/2} \\
+g'(x) &amp;= 2x+3
+\end{aligned}
+\]</span></p>
+<p>Applying the chain rule:</p>
+<p><span class="math display">\[
+h'(x) = f'(g(x)) \cdot g'(x)
+\]</span> <span class="math display">\[
+h'(x)= \frac{1}{2}(x^2+3x)^{-1/2} \cdot (2x+3)
+\]</span> Rewriting with a positive exponent and converting back to radical form: <span class="math display">\[
+\begin{aligned}
+h'(x)&amp;= \frac{2x+3}{2(x^2+3x)^{1/2}} \\[6pt]
+h'(x)&amp;=\boxed{\frac{2x+3}{2\sqrt{x^2+3x}}} \\
+\end{aligned}
+\]</span></p>
+<section id="chain-rule-version-of-basic-differentiation-rules" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="chain-rule-version-of-basic-differentiation-rules"><span class="header-section-number">4.4.1</span> Chain Rule Version of Basic Differentiation Rules</h3>
+<p>In the chain rule versions below, <span class="math inline">\(u = g(x)\)</span> represents any differentiable inner function and <span class="math inline">\(u' = g'(x)\)</span> is its derivative.</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Basic Rule</strong> <span class="math display">\[\frac{d}{dx}(x^n)=nx^{n-1}\]</span> <span class="math display">\[\frac{d}{dx}(e^x)=e^x\]</span> <span class="math display">\[\frac{d}{dx}(a^x)=a^x \ln(a)\]</span> <span class="math display">\[\frac{d}{dx}(\ln x)=\frac{1}{x}\]</span> <span class="math display">\[\frac{d}{dx}(\log_a x)=\frac{1}{x} \cdot \frac{1}{\ln(a)}\]</span> <span class="math display">\[\frac{d}{dx}(\sin x)=\cos x\]</span> <span class="math display">\[\frac{d}{dx}(\cos x)=-\sin x\]</span> <span class="math display">\[\frac{d}{dx}(\tan x)=\sec^2 x\]</span> <span class="math display">\[\frac{d}{dx}(\sec x)=\sec x\tan x\]</span> <span class="math display">\[\frac{d}{dx}(\csc x)=-\csc x\cot x\]</span> <span class="math display">\[\frac{d}{dx}(\cot x)=-\csc^2 x\]</span></p>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:48%;">
+<p><strong>Chain Rule Version</strong> <span class="math display">\[\frac{d}{dx}(u^n)=nu^{n-1} \cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(e^u)=e^u\cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(a^u)=a^u \ln(a)\cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\ln u)=\frac{1}{u}\cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\log_a u)=\frac{1}{u} \cdot \frac{1}{\ln(a)}\cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\sin u)=\cos u \cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\cos u)=-\sin u \cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\tan u)=\sec^2 u \cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\sec u)=\sec u\tan u \cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\csc u)=-\csc u\cot u\cdot u'\]</span> <span class="math display">\[\frac{d}{dx}(\cot u)=-\csc^2 u\cdot u'\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="worked-problems" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="worked-problems"><span class="header-section-number">4.5</span> Worked Problems</h2>
+<p><strong>For each of the following functions, determine the derivative:</strong></p>
+<p><strong>Problem 1</strong> <span class="math inline">\(f(x)=5^{4x^{3}+6x^{2}}\)</span></p>
+<p><span class="math display">\[
+f'(x)= \boxed{5^{4x^3+6x^2} \cdot (12x^2+12x) \cdot \ln(5)}
+\]</span></p>
+<p><strong>Problem 2</strong> <span class="math inline">\(g(x)=\ln(\cos x)\)</span></p>
+<p><span class="math display">\[
+g'(x)=\frac{1}{\cos x} \cdot -\sin x
+\]</span> Recognize the trigonometric identity when we combine the terms: <span class="math display">\[
+g'(x)=\frac{-\sin x}{\cos x} \implies g'(x) = -\tan x
+\]</span> Therefore, we can write our final solution as: <span class="math display">\[
+g'(x)=\boxed{-\tan x}
+\]</span></p>
+<p><strong>Problem 3</strong> <span class="math inline">\(h(x)=\sec(5x-7x^2)\)</span></p>
+<p><span class="math display">\[
+h'(x)=\sec(5x-7x^2)\tan(5x-7x^2)\cdot (5-14x)
+\]</span></p>
+<p><strong>Problem 4</strong> <span class="math inline">\(y=x^8e^{x^4}\)</span></p>
+<p>Notice that not only do we have a composite function, but it is being multiplied by another function. In this case, we must combine both the product rule and the chain rule to differentiate: <span class="math display">\[
+y'=(8x^7 \cdot e^{x^4})+(x^8 \cdot e^{x^4} \cdot 4x^3)
+\]</span> <span class="math display">\[
+y'=(8x^7e^{x^4})+(4x^{11}e^{x^4})
+\]</span> Simplify by factoring out <span class="math inline">\(4x^7e^{x^4}\)</span>: <span class="math display">\[
+y'= \boxed{4x^7e^{x^4}(2+x^4)}
+\]</span></p>
+<p><strong>Problem 5</strong> <span class="math inline">\(f(x)=\frac{4^{3x+1}}{\tan(8x-5)}\)</span></p>
+<p>Here, notice that we have two composite functions being divided by each other. In this situation, we must combine the quotient rule and the chain rule: <span class="math display">\[
+f'(x)=\boxed{\frac{4^{3x+1} \cdot \ln(4) \cdot 3 \cdot \tan(8x-5)-4^{3x+1} \cdot \sec^{2}(8x-5) \cdot 8}{\tan^{2}(8x-5)}}
+\]</span></p>
 
 
 </section>
