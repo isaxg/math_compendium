@@ -3,7 +3,7 @@ title: "Introduction to Derivatives"
 ---
 ```{=html}
 <style>
-mjx-container[display="true"] {
+.columns mjx-container[display="true"] {
   text-align: left !important;
   margin-left: 1em !important;
 }
@@ -169,28 +169,30 @@ $$
 
 **Example:** Determine $y'$ for $y = 3^x \cdot \ln(x)$
 
-Here $f(x) = 3^x$ and $g(x) = \ln(x)$, so:
+Here **$f(x) = 3^x$** and **$g(x) = \ln(x)$**, so:
 
 $$
 \begin{aligned}
 f'(x) &= 3^x \cdot \ln(3) \\
-g'(x) &= \frac{1}{x}
+g'(x) &= \frac{1}{x} \\
 \end{aligned}
 $$
 
 Applying the product rule:
 
 $$
-\begin{aligned}
-y' &= f'(x) \cdot g(x) + g'(x) \cdot f(x) \\[6pt]
-   &= 3^x \cdot \ln(3) \cdot \ln(x) + \frac{1}{x} \cdot 3^x \\[6pt]
-   &= \boxed{3^x\left[\ln(3) \cdot \ln(x) + \frac{1}{x}\right]}
-\end{aligned}
+y' = f'(x) \cdot g(x) + g'(x) \cdot f(x) 
+$$
+$$
+y' = 3^x \cdot \ln(3) \cdot \ln(x) + \frac{1}{x} \cdot 3^x 
+$$
+$$
+y' = \boxed{3^x\left[\ln(3) \cdot \ln(x) + \frac{1}{x}\right]}
 $$
 
 **Example:** Determine $y'$ for $y = \frac{\sin x}{x^2 + 3x}$
 
-Here $f(x) = \sin x$ and $g(x) = x^2 + 3x$, so:
+Here **$f(x) = \sin x$** and **$g(x) = x^2 + 3x$**, so:
 
 $$
 \begin{aligned}
@@ -202,10 +204,10 @@ $$
 Applying the quotient rule:
 
 $$
-\begin{aligned}
-y' &= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2} \\[10pt]
-   &= \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
-\end{aligned}
+y' = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2}
+$$
+$$
+y' = \boxed{\frac{\cos x \cdot (x^2+3x) - \sin x \cdot (2x+3)}{(x^2+3x)^2}}
 $$
 
 ## Chain Rule
@@ -225,6 +227,125 @@ Broken down, this rule:
 2. takes the derivative of the inside function,
 3. and multiplies the two together.
 
+**Example:** Determine $h'(x)$ for $h(x) = \sqrt{x^2+3x}$
+
+Here $g(x) = x^2 + 3x$ and $f(u) = \sqrt{u} = u^{1/2}$, so:
+
+$$
+\begin{aligned}
+f'(u) &= \frac{1}{2}u^{-1/2} \\
+g'(x) &= 2x+3
+\end{aligned}
+$$
+
+Applying the chain rule:
+
+$$
+h'(x) = f'(g(x)) \cdot g'(x)
+$$
+$$
+h'(x)= \frac{1}{2}(x^2+3x)^{-1/2} \cdot (2x+3) 
+$$
+Rewriting with a positive exponent and converting back to radical form:
+$$
+\begin{aligned}
+h'(x)&= \frac{2x+3}{2(x^2+3x)^{1/2}} \\[6pt]
+h'(x)&=\boxed{\frac{2x+3}{2\sqrt{x^2+3x}}} \\
+\end{aligned}
+$$
+
+### Chain Rule Version of Basic Differentiation Rules
+In the chain rule versions below, $u = g(x)$ represents any differentiable inner function and $u' = g'(x)$ is its derivative.
+
+:::: {.columns}
+
+::: {.column width="48%"}
+**Basic Rule**
+$$\frac{d}{dx}(x^n)=nx^{n-1}$$
+$$\frac{d}{dx}(e^x)=e^x$$
+$$\frac{d}{dx}(a^x)=a^x \ln(a)$$
+$$\frac{d}{dx}(\ln x)=\frac{1}{x}$$
+$$\frac{d}{dx}(\log_a x)=\frac{1}{x} \cdot \frac{1}{\ln(a)}$$
+$$\frac{d}{dx}(\sin x)=\cos x$$
+$$\frac{d}{dx}(\cos x)=-\sin x$$
+$$\frac{d}{dx}(\tan x)=\sec^2 x$$
+$$\frac{d}{dx}(\sec x)=\sec x\tan x$$
+$$\frac{d}{dx}(\csc x)=-\csc x\cot x$$
+$$\frac{d}{dx}(\cot x)=-\csc^2 x$$
+:::
+
+::: {.column width="4%"}
+
+:::
+
+::: {.column width="48%"}
+**Chain Rule Version**
+$$\frac{d}{dx}(u^n)=nu^{n-1} \cdot u'$$
+$$\frac{d}{dx}(e^u)=e^u\cdot u'$$
+$$\frac{d}{dx}(a^u)=a^u \ln(a)\cdot u'$$
+$$\frac{d}{dx}(\ln u)=\frac{1}{u}\cdot u'$$
+$$\frac{d}{dx}(\log_a u)=\frac{1}{u} \cdot \frac{1}{\ln(a)}\cdot u'$$
+$$\frac{d}{dx}(\sin u)=\cos u \cdot u'$$
+$$\frac{d}{dx}(\cos u)=-\sin u \cdot u'$$
+$$\frac{d}{dx}(\tan u)=\sec^2 u \cdot u'$$
+$$\frac{d}{dx}(\sec u)=\sec u\tan u \cdot u'$$
+$$\frac{d}{dx}(\csc u)=-\csc u\cot u\cdot u'$$
+$$\frac{d}{dx}(\cot u)=-\csc^2 u\cdot u'$$
+
+:::
+
+::::
+
+## Worked Problems
+
+**For each of the following functions, determine the derivative:**
+
+**Problem 1** $f(x)=5^{4x^{3}+6x^{2}}$
+
+$$
+f'(x)= \boxed{5^{4x^3+6x^2} \cdot (12x^2+12x) \cdot \ln(5)}
+$$
+
+**Problem 2** $g(x)=\ln(\cos x)$
+
+$$
+g'(x)=\frac{1}{\cos x} \cdot -\sin x
+$$
+Recognize the trigonometric identity when we combine the terms:
+$$
+g'(x)=\frac{-\sin x}{\cos x} \implies g'(x) = -\tan x
+$$
+Therefore, we can write our final solution as:
+$$
+g'(x)=\boxed{-\tan x}
+$$
+
+**Problem 3** $h(x)=\sec(5x-7x^2)$
+
+$$
+h'(x)=\sec(5x-7x^2)\tan(5x-7x^2)\cdot (5-14x)
+$$
+
+**Problem 4** $y=x^8e^{x^4}$
+
+Notice that not only do we have a composite function, but it is being multiplied by another function. In this case, we must combine both the product rule and the chain rule to differentiate:
+$$
+y'=(8x^7 \cdot e^{x^4})+(x^8 \cdot e^{x^4} \cdot 4x^3)
+$$
+$$
+y'=(8x^7e^{x^4})+(4x^{11}e^{x^4})
+$$
+Simplify by factoring out $4x^7e^{x^4}$:
+$$
+y'= \boxed{4x^7e^{x^4}(2+x^4)}
+$$
+
+**Problem 5** $f(x)=\frac{4^{3x+1}}{\tan(8x-5)}$
+
+Here, notice that we have two composite functions being divided by each other. In this situation, we must combine the quotient rule and the chain rule:
+$$
+f'(x)=\boxed{\frac{4^{3x+1} \cdot \ln(4) \cdot 3 \cdot \tan(8x-5)-4^{3x+1} \cdot \sec^{2}(8x-5) \cdot 8}{\tan^{2}(8x-5)}}
+$$
 
 
 
