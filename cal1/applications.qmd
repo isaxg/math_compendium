@@ -1,0 +1,90 @@
+---
+title: Applications of the Derivative
+---
+
+## Extreme Values
+
+Being able to find the minimum or maximum value of a function is a very important skill in many applications, especially in economics. These values are called extreme values or extrema, and optimization is how we refer to the process of finding them.
+
+An absolute (or global) maximum or a minimum is a y-value of a function where either:
+
+$$
+y=f(c) \ge f(x) \quad \text{(maximum)}
+$$
+$$
+\text{or,}
+$$
+$$
+y=f(c) \le f(x) \quad \text{(minimum)}
+$$
+
+for all x in the *domain* of the function.
+
+A relative (or local) maximum or minimum is a y-value of a function where either:
+
+$$
+y=f(c) \ge f(x) \quad \text{(maximum)}
+$$
+
+$$
+\text{or,}
+$$
+
+$$
+y=f(c) \le f(x) \quad \text{(minimum)}
+$$
+
+for all x in *some interval* containing x=c.
+
+> **Extreme Value Theorem:**
+> If $f(x)$ is continuous on $x \in [a,b]$, it must have an absolute minimum and absolute maximum value.
+
+This is a crucial theorem of calculus because it guarantees the existence of absolute extrema without any calculation. To understand it conceptually, think about a piece of string on a table. Imagine you have your left pointer finger holding down the left end of the string and your right pointer finger holding down the right end. Keeping your fingers pressed on the string and moving them together, you will see a high and low point emerge naturally. 
+
+### Critical values
+
+A critical value, or number, is an $x$ value in the domain of $f(x)$ where either:
+
+$$
+f'(c)=0 \quad \text{OR} \quad f'(c) \;\: \text{does not exist.}
+$$
+
+> **Fermat's Theorem on Local Extrema:**
+> If $f(c)$ is a local minimum or maximum, then $c$ is a critical value of $f(x)$.
+
+This theorem tells us that local extrema *only* occur at critical values. Think about it like this: a smooth curve can only change from going up to going down where its slope is flat (zero) or where it has a sharp corner (DNE). Note, however, that this theorem does not say that all critical values are extrema. Some critical values may be inflection points where the function flattens out but continues in the same direction.
+
+Steps for determining critical values of a function, $f(x)$:
+
+1. Determine the domain of the function. (recall domain restrictions from @sec-domain-restrictions)
+
+2. Differentiate $f(x)$ to find $f'(x)$.
+
+3. Find where $f'(x)$ equals zero by setting $f'(x)=0$ and solving.
+
+4. Find where $f'(x)$ does not exist or state it exists everywhere.
+
+**Example:** Determine any critical values for $f(x)=x^3+6x^2-15x$
+
+1. This function has no restrictions so D:$(-\infty,\infty)$.
+2. The derivative of $f(x)$ is
+$$
+f'(x) = 3x^2+12x-15
+$$
+3. Setting $f'(x)=0$ and solving yields:
+$$
+3x^2+12x-15 = 0
+$$
+$$
+3(x^2+4x-5)=0
+$$
+$$
+3(x-1)(x+5)=0
+$$
+$$
+\boxed{x=1, -5}
+$$
+4. $f'(x)$ exists everywhere since the domain of $f(x)$ is all real numbers.
+
+The values $x=1$ and $x=-5$ are critical values since they are both in the domain of the function. 
+

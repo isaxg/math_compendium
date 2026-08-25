@@ -15,6 +15,7 @@ book:
     - part: "Calculus I"
       chapters:
         - cal1/derivatives.qmd
+        - cal1/applications.qmd
     - part: "Calculus II"
       chapters:
         - cal2/integration_techniques.qmd
@@ -30,6 +31,5 @@ format:
       - cosmo
       - brand
     include-in-header: head.html
-
 
 

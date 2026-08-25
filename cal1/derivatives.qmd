@@ -19,7 +19,7 @@ m_s = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
 $$
 
 As the two points grow closer together, the secant line approaches the 
-tangent line — and the average rate of change approaches the instantaneous 
+tangent line, and the average rate of change approaches the instantaneous 
 rate of change. This limiting process is the foundation of the derivative:
 
 $$
@@ -42,7 +42,7 @@ dark = '#333333'
 purple = '#134cd1'
 green = '#e77f10'
 
-# Curve: use a cubic for interesting shape
+# Curve: cubic
 x = np.linspace(-2.5, 2.5, 400)
 f = lambda x: 0.3*x**3 - 0.5*x + 0.3
 ax.plot(x, f(x), color=dark, linewidth=2, zorder=2)
@@ -128,7 +128,7 @@ $$\frac{d}{dx}(\sec x)=\sec x\tan x$$
 $$\frac{d}{dx}(\csc x)=-\csc x\cot x$$
 $$\frac{d}{dx}(\cot x)=-\csc^2 x$$
 
-**Domain Restrictions**
+#### **Domain Restrictions** {#sec-domain-restrictions}
 Recall the three general rules that restrict a domain:
 
 1. Denominators: $d \neq 0$
