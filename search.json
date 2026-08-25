@@ -168,7 +168,7 @@
     "href": "cal1/derivatives.html#differentiation-rules",
     "title": "4  Introduction to Derivatives",
     "section": "4.2 Differentiation Rules",
-    "text": "4.2 Differentiation Rules\n\n\nConstant & Power \\[\\frac{d}{dx}(a)=0\\] \\[\\frac{d}{dx}(x^n)=nx^{n-1}\\]\nExponential & Logarithmic \\[\\frac{d}{dx}(e^x)=e^x\\] \\[\\frac{d}{dx}(a^x)=a^x \\ln(a)\\] \\[\\frac{d}{dx}(\\ln x)=\\frac{1}{x}\\] \\[\\frac{d}{dx}(\\log_a x)=\\frac{1}{x\\ln(a)}\\]\nInverse Trigonometric \\[\\frac{d}{dx}(\\arcsin x)=\\frac{1}{\\sqrt{1-x^2}}\\] \\[\\frac{d}{dx}(\\arccos x)=\\frac{-1}{\\sqrt{1-x^2}}\\] \\[\\frac{d}{dx}(\\arctan x)=\\frac{1}{1+x^2}\\]\n\n\n\nTrigonometric \\[\\frac{d}{dx}(\\sin x)=\\cos x\\] \\[\\frac{d}{dx}(\\cos x)=-\\sin x\\] \\[\\frac{d}{dx}(\\tan x)=\\sec^2 x\\] \\[\\frac{d}{dx}(\\sec x)=\\sec x\\tan x\\] \\[\\frac{d}{dx}(\\csc x)=-\\csc x\\cot x\\] \\[\\frac{d}{dx}(\\cot x)=-\\csc^2 x\\]\nDomain Restrictions Recall the three general rules that restrict a domain:\n\nDenominators: \\(d \\neq 0\\)\nEven roots: expression inside \\(\\geq 0\\)\nLogarithms: expression inside \\(&gt; 0\\)\n\nSeveral derivative formulas carry implicit domain restrictions or points where the formula breaks down and the function is not differentiable. This does not mean the function itself is necessarily discontinuous at those points, but rather that the derivative fails to exist there. Recognizing which rules carry these restrictions is an important part of analyzing the full behavior of a function.",
+    "text": "4.2 Differentiation Rules\n\n\nConstant & Power \\[\\frac{d}{dx}(a)=0\\] \\[\\frac{d}{dx}(x^n)=nx^{n-1}\\]\nExponential & Logarithmic \\[\\frac{d}{dx}(e^x)=e^x\\] \\[\\frac{d}{dx}(a^x)=a^x \\ln(a)\\] \\[\\frac{d}{dx}(\\ln x)=\\frac{1}{x}\\] \\[\\frac{d}{dx}(\\log_a x)=\\frac{1}{x\\ln(a)}\\]\nInverse Trigonometric \\[\\frac{d}{dx}(\\arcsin x)=\\frac{1}{\\sqrt{1-x^2}}\\] \\[\\frac{d}{dx}(\\arccos x)=\\frac{-1}{\\sqrt{1-x^2}}\\] \\[\\frac{d}{dx}(\\arctan x)=\\frac{1}{1+x^2}\\]\n\n\n\nTrigonometric \\[\\frac{d}{dx}(\\sin x)=\\cos x\\] \\[\\frac{d}{dx}(\\cos x)=-\\sin x\\] \\[\\frac{d}{dx}(\\tan x)=\\sec^2 x\\] \\[\\frac{d}{dx}(\\sec x)=\\sec x\\tan x\\] \\[\\frac{d}{dx}(\\csc x)=-\\csc x\\cot x\\] \\[\\frac{d}{dx}(\\cot x)=-\\csc^2 x\\]\n\n4.2.0.1 Domain Restrictions\nRecall the three general rules that restrict a domain:\n\nDenominators: \\(d \\neq 0\\)\nEven roots: expression inside \\(\\geq 0\\)\nLogarithms: expression inside \\(&gt; 0\\)\n\nSeveral derivative formulas carry implicit domain restrictions or points where the formula breaks down and the function is not differentiable. This does not mean the function itself is necessarily discontinuous at those points, but rather that the derivative fails to exist there. Recognizing which rules carry these restrictions is an important part of analyzing the full behavior of a function.",
     "crumbs": [
       "Calculus I",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Derivatives</span>"
@@ -208,124 +208,146 @@
     ]
   },
   {
+    "objectID": "cal1/applications.html",
+    "href": "cal1/applications.html",
+    "title": "5  Applications of the Derivative",
+    "section": "",
+    "text": "5.1 Extreme Values\nBeing able to find the minimum or maximum value of a function is a very important skill in many applications, especially in economics. These values are called extreme values or extrema, and optimization is how we refer to the process of finding them.\nAn absolute (or global) maximum or a minimum is a y-value of a function where either:\n\\[\ny=f(c) \\ge f(x) \\quad \\text{(maximum)}\n\\] \\[\n\\text{or,}\n\\] \\[\ny=f(c) \\le f(x) \\quad \\text{(minimum)}\n\\]\nfor all x in the domain of the function.\nA relative (or local) maximum or minimum is a y-value of a function where either:\n\\[\ny=f(c) \\ge f(x) \\quad \\text{(maximum)}\n\\]\n\\[\n\\text{or,}\n\\]\n\\[\ny=f(c) \\le f(x) \\quad \\text{(minimum)}\n\\]\nfor all x in some interval containing x=c.\nThis is a crucial theorem of calculus because it guarantees the existence of absolute extrema without any calculation. To understand it conceptually, think about a piece of string on a table. Imagine you have your left pointer finger holding down the left end of the string and your right pointer finger holding down the right end. Keeping your fingers pressed on the string and moving them together, you will see a high and low point emerge naturally.",
+    "crumbs": [
+      "Calculus I",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Applications of the Derivative</span>"
+    ]
+  },
+  {
+    "objectID": "cal1/applications.html#extreme-values",
+    "href": "cal1/applications.html#extreme-values",
+    "title": "5  Applications of the Derivative",
+    "section": "",
+    "text": "Extreme Value Theorem: If \\(f(x)\\) is continuous on \\(x \\in [a,b]\\), it must have an absolute minimum and absolute maximum value.\n\n\n\n5.1.1 Critical values\nA critical value, or number, is an \\(x\\) value in the domain of \\(f(x)\\) where either:\n\\[\nf'(c)=0 \\quad \\text{OR} \\quad f'(c) \\;\\: \\text{does not exist.}\n\\]\n\nFermat’s Theorem on Local Extrema: If \\(f(c)\\) is a local minimum or maximum, then \\(c\\) is a critical value of \\(f(x)\\).\n\nThis theorem tells us that local extrema only occur at critical values. Think about it like this: a smooth curve can only change from going up to going down where its slope is flat (zero) or where it has a sharp corner (DNE). Note, however, that this theorem does not say that all critical values are extrema. Some critical values may be inflection points where the function flattens out but continues in the same direction.\nSteps for determining critical values of a function, \\(f(x)\\):\n\nDetermine the domain of the function. (recall domain restrictions from Section 4.2.0.1)\nDifferentiate \\(f(x)\\) to find \\(f'(x)\\).\nFind where \\(f'(x)\\) equals zero by setting \\(f'(x)=0\\) and solving.\nFind where \\(f'(x)\\) does not exist or state it exists everywhere.\n\nExample: Determine any critical values for \\(f(x)=x^3+6x^2-15x\\)\n\nThis function has no restrictions so D:\\((-\\infty,\\infty)\\).\nThe derivative of \\(f(x)\\) is \\[\nf'(x) = 3x^2+12x-15\n\\]\nSetting \\(f'(x)=0\\) and solving yields: \\[\n3x^2+12x-15 = 0\n\\] \\[\n3(x^2+4x-5)=0\n\\] \\[\n3(x-1)(x+5)=0\n\\] \\[\n\\boxed{x=1, -5}\n\\]\n\\(f'(x)\\) exists everywhere since the domain of \\(f(x)\\) is all real numbers.\n\nThe values \\(x=1\\) and \\(x=-5\\) are critical values since they are both in the domain of the function.",
+    "crumbs": [
+      "Calculus I",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Applications of the Derivative</span>"
+    ]
+  },
+  {
     "objectID": "cal2/integration_techniques.html",
     "href": "cal2/integration_techniques.html",
-    "title": "5  Integration Techniques",
+    "title": "6  Integration Techniques",
     "section": "",
     "text": "A Note on the Nature of Integration\nIntegration is often introduced by relating it to differentiation, and while it is technically the inverse of differentiation, the actual process of integration is quite a distinct experience. Differentiation has clean, mechanical rules that reliably produce an answer for any function you encounter. The process of taking a derivative is quite linear: choose from a (short) list of formulaic rules, apply the rules, and simplify your answer with a bit of algebra. Integration, on the other hand, demands a certain level of critical thinking and pattern recognition, and you will soon see that not every integral has a closed-form solution at all. This is all to say that you will save yourself some shock if you avoid building your expectations for integration around the notion that it will be the opposite of taking a derivative.\nThe process of integration can look and feel a lot like failure. Improving your skills will require you to let go of a desire for perfection and just choose a strategy to dive into the problem-solving process, even if it may be the incorrect one. It is normal to try something, get stuck, backtrack, and try again many times until you arrive at the answer. Learning to integrate is largely learning to tolerate uncertainty and to be resilient amidst the presence of failure.\nIt is common for there to be a learning curve as we transition from differentiation to integration, but don’t let this discourage you; everytime you solve one of these puzzles, you expand the limits of your mind, add new tools to your toolkit, and get a step closer to mathematical maturity.\nThe strategies outlined in this chapter cover the most common forms you will encounter, but knowing which strategy to apply (or whether to combine them) is a skill that develops through practice and through pushing through failed attempts.",
     "crumbs": [
       "Calculus II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Integration Techniques</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Integration Techniques</span>"
     ]
   },
   {
     "objectID": "cal2/integration_techniques.html#integration-by-substitution",
     "href": "cal2/integration_techniques.html#integration-by-substitution",
-    "title": "5  Integration Techniques",
-    "section": "5.1 Integration by Substitution",
-    "text": "5.1 Integration by Substitution\nOften referred to as “u-substitution” or “u-sub”, integration by substitution is a technique that essentially undoes the chain rule to evaluate complex integrals. Remember that chain rule is our technique for differentiating composite functions, i.e., a function inside of a function. Similarly, we can use u-sub to find antiderivatives of composite functions.\nTake the following integrand as an example: \\(\\int 2x(x^2+3)^7 \\,dx\\) Recognize that it takes the classic form of a composite function: \\(((f \\circ g)(x))\\), where \\((x^2+3)\\) is our \\(g(x)\\), or our “inner” function in this case. In a similar way to the chain rule, we will choose this part of the function to be our \\(u\\).\n\n5.1.1 Choosing \\(u\\): General Heuristics\nThe most important step in u-substitution is recognizing which part of the integrand to set as \\(u\\). The following strategies cover the most common forms:\n\nComposite functions — choose the inner function (Strategy 1)\nExponential terms — choose the exponent (Strategy 2)\n\nFractions — choose the denominator when its derivative appears in the numerator (Strategy 3)\nLogarithmic terms — choose the argument of the log (Strategy 4)\n\n\n\n5.1.2 Strategy 1: Basic U-Substitution\nExample: Evaluate \\(\\int 2x(x^2+3)^7 \\,dx\\)\nRecognize that \\((x^2+3)\\) is our inner function \\(g(x)\\), so we set \\(u = x^2 + 3\\).\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = x^2+3\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = 2x \\implies dx = \\frac{du}{2x}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int 2x(u)^7 \\frac{du}{2x}\\]\nNotice the \\(2x\\) terms cancel, leaving: \\[\\int u^7 \\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[= \\frac{u^8}{8} + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= \\frac{1}{8}(x^2+3)^8 + C\\]\nTherefore: \\[\\int 2x(x^2+3)^7 \\,dx = \\frac{1}{8}(x^2+3)^8 + C\\]\n\n\n5.1.3 Strategy 2: Single Exponential Form\nIf there is a single exponential term, we often let the exponent be the \\(u\\).\nExample Evaluate \\(\\int x^4e^{{7x}^{5}}\\,dx\\)\nHere, recognize that our exponential term is raised to the power \\({7x}^{5}\\). Let’s choose this as our \\(u\\) and proceed with the following u-sub steps as we did in the previous example.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = {7x}^{5}\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = 35x^4 \\implies dx = \\frac{du}{35x^4}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int x^4e^u\\frac{du}{35x^4}\\]\nNotice the \\(x^4\\) terms cancel, leaving: \\[\\int e^u\\frac{du}{35}\\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[= \\frac{1}{35}e^u + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= \\frac{1}{35}e^{{7x}^{5}} + C\\]\nTherefore: \\[\\int x^4e^{{7x}^{5}}\\,dx = \\frac{1}{35}e^{{7x}^{5}} + C\\]\n\n\n5.1.4 Strategy 3: Non-Reducible Fractions\nIf we see a fraction we can’t reduce, then we often let the entire denominator be \\(u\\).\nExample 1 Evaluate \\(\\int \\frac{3x^2+7}{x^3+7x}\\,dx\\)\nThere’s no factoring we can do to get this integrand into a simpler form so let’s choose the denominator \\(x^3+7x\\) as our \\(u\\) and proceed with our u-sub steps.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = x^3+7x\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = 3x^2+7 \\implies dx = \\frac{du}{3x^2+7}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int \\frac{3x^2+7}{u} \\cdot \\frac{du}{3x^2+7}\\]\nNotice the \\(x^4\\) terms cancel, leaving: \\[\\int \\frac{1}{u}\\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[\\int u^{-1}\\,du \\implies ln|u| + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= ln|x^3+7x| + C\\]\nTherefore: \\[\\int \\frac{3x^2+7}{x^3+7x}\\,dx = ln|x^3+7x| + C\\]\nExample 2 Evaluate \\(\\int \\tan x\\,dx\\)\nThis integrand may not appear as a fraction on the surface, but let’s recall one of our trig identities and recognize that \\(\\tan x\\ = \\frac{\\sin x}{\\cos x}\\), rewriting the integral as: \\[\\int \\frac{\\sin x}{\\cos x}\\,dx\\] Because of this preliminary rewrite, we can now apply the same strategy, choosing the denominator $x$ as our \\(u\\) and proceeding with u-sub steps.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = \\cos x\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = -\\sin x \\implies dx = \\frac{du}{-\\sin x}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int \\frac{\\sin x}{u} \\cdot \\frac{du}{-\\sin x}\\]\nNotice the \\(\\sin x\\) terms cancel, leaving: \\[\\int -\\frac{1}{u}\\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[= -ln|u| + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= -ln|\\cos x| + C\\]\nTherefore: \\[\\int \\tan x\\,dx = \\int \\frac{\\sin x}{\\cos x}\\,dx = -ln|\\cos x| + C\\]\n&lt;!–&gt; A note as we begin working with integrals: This is only the beginning of some of the “outside-of-the-box” thinking skills Calculus II demands. It is common for there to be a learning curve as we transition from differentiation to integration, but don’t let this discourage you; everytime we solve these puzzles, we expand the limits of our mind, add new tools to our toolkit, and get a step closer to mathematical maturity.–&gt;\n\n\n5.1.5 Strategy 4: Logarithmic Terms\nIf there is a log term as part of a multiplication or division, we often let the entire term with the log be \\(u\\).\nExample 1 Evaluate \\(\\int \\frac{\\ln(x)+3}{x}\\,dx\\)\nIt may be tempting to choose \\(x\\) as our \\(u\\) — after all, we just covered this as our strategy for integrating non-reducible fractions. However, the log term in the numerator complicates things. A natural question arises: how do we choose \\(u\\) when the integral doesn’t obviously fit a pattern we recognize? A useful approach when you get stuck is to choose the “unknown” term—that is, the term for which we don’t have a clean antiderivative formula—as our \\(u\\). Remembering our antiderivative rules, we can recognize \\(\\ln(x)\\) as the unknown piece of this integrand. Since the constant \\(3\\) is simply added to \\(\\ln(x)\\) and the two are inseparable in the numerator, it is natural to treat the entire expression \\(\\ln(x) + 3\\) as our \\(u\\). As we will see, this choice keeps our substitution clean and allows all original variables to cancel neatly.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = \\ln(x)+3\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = \\frac{1}{x} \\implies dx = du \\cdot x\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int \\frac{u}{x}\\, du \\cdot x\\]\nNotice the \\(x\\) terms cancel, leaving: \\[\\int u \\cdot du\\]\nStep 4: Integrate with respect to \\(u\\) \\[ \\frac{u^2}{2} + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= \\frac{(\\ln(x)+3)^2}{2} + C \\implies =\\frac{1}{2}(\\ln(x)+3)^2+C\\]\nTherefore: \\[\\int \\frac{\\ln(x)+3}{x}\\,dx = \\frac{1}{2}(\\ln(x)+3)^2+C\\]",
+    "title": "6  Integration Techniques",
+    "section": "6.1 Integration by Substitution",
+    "text": "6.1 Integration by Substitution\nOften referred to as “u-substitution” or “u-sub”, integration by substitution is a technique that essentially undoes the chain rule to evaluate complex integrals. Remember that chain rule is our technique for differentiating composite functions, i.e., a function inside of a function. Similarly, we can use u-sub to find antiderivatives of composite functions.\nTake the following integrand as an example: \\(\\int 2x(x^2+3)^7 \\,dx\\) Recognize that it takes the classic form of a composite function: \\(((f \\circ g)(x))\\), where \\((x^2+3)\\) is our \\(g(x)\\), or our “inner” function in this case. In a similar way to the chain rule, we will choose this part of the function to be our \\(u\\).\n\n6.1.1 Choosing \\(u\\): General Heuristics\nThe most important step in u-substitution is recognizing which part of the integrand to set as \\(u\\). The following strategies cover the most common forms:\n\nComposite functions — choose the inner function (Strategy 1)\nExponential terms — choose the exponent (Strategy 2)\n\nFractions — choose the denominator when its derivative appears in the numerator (Strategy 3)\nLogarithmic terms — choose the argument of the log (Strategy 4)\n\n\n\n6.1.2 Strategy 1: Basic U-Substitution\nExample: Evaluate \\(\\int 2x(x^2+3)^7 \\,dx\\)\nRecognize that \\((x^2+3)\\) is our inner function \\(g(x)\\), so we set \\(u = x^2 + 3\\).\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = x^2+3\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = 2x \\implies dx = \\frac{du}{2x}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int 2x(u)^7 \\frac{du}{2x}\\]\nNotice the \\(2x\\) terms cancel, leaving: \\[\\int u^7 \\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[= \\frac{u^8}{8} + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= \\frac{1}{8}(x^2+3)^8 + C\\]\nTherefore: \\[\\int 2x(x^2+3)^7 \\,dx = \\frac{1}{8}(x^2+3)^8 + C\\]\n\n\n6.1.3 Strategy 2: Single Exponential Form\nIf there is a single exponential term, we often let the exponent be the \\(u\\).\nExample Evaluate \\(\\int x^4e^{{7x}^{5}}\\,dx\\)\nHere, recognize that our exponential term is raised to the power \\({7x}^{5}\\). Let’s choose this as our \\(u\\) and proceed with the following u-sub steps as we did in the previous example.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = {7x}^{5}\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = 35x^4 \\implies dx = \\frac{du}{35x^4}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int x^4e^u\\frac{du}{35x^4}\\]\nNotice the \\(x^4\\) terms cancel, leaving: \\[\\int e^u\\frac{du}{35}\\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[= \\frac{1}{35}e^u + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= \\frac{1}{35}e^{{7x}^{5}} + C\\]\nTherefore: \\[\\int x^4e^{{7x}^{5}}\\,dx = \\frac{1}{35}e^{{7x}^{5}} + C\\]\n\n\n6.1.4 Strategy 3: Non-Reducible Fractions\nIf we see a fraction we can’t reduce, then we often let the entire denominator be \\(u\\).\nExample 1 Evaluate \\(\\int \\frac{3x^2+7}{x^3+7x}\\,dx\\)\nThere’s no factoring we can do to get this integrand into a simpler form so let’s choose the denominator \\(x^3+7x\\) as our \\(u\\) and proceed with our u-sub steps.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = x^3+7x\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = 3x^2+7 \\implies dx = \\frac{du}{3x^2+7}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int \\frac{3x^2+7}{u} \\cdot \\frac{du}{3x^2+7}\\]\nNotice the \\(x^4\\) terms cancel, leaving: \\[\\int \\frac{1}{u}\\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[\\int u^{-1}\\,du \\implies ln|u| + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= ln|x^3+7x| + C\\]\nTherefore: \\[\\int \\frac{3x^2+7}{x^3+7x}\\,dx = ln|x^3+7x| + C\\]\nExample 2 Evaluate \\(\\int \\tan x\\,dx\\)\nThis integrand may not appear as a fraction on the surface, but let’s recall one of our trig identities and recognize that \\(\\tan x\\ = \\frac{\\sin x}{\\cos x}\\), rewriting the integral as: \\[\\int \\frac{\\sin x}{\\cos x}\\,dx\\] Because of this preliminary rewrite, we can now apply the same strategy, choosing the denominator $x$ as our \\(u\\) and proceeding with u-sub steps.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = \\cos x\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = -\\sin x \\implies dx = \\frac{du}{-\\sin x}\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int \\frac{\\sin x}{u} \\cdot \\frac{du}{-\\sin x}\\]\nNotice the \\(\\sin x\\) terms cancel, leaving: \\[\\int -\\frac{1}{u}\\,du\\]\nStep 4: Integrate with respect to \\(u\\) \\[= -ln|u| + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= -ln|\\cos x| + C\\]\nTherefore: \\[\\int \\tan x\\,dx = \\int \\frac{\\sin x}{\\cos x}\\,dx = -ln|\\cos x| + C\\]\n&lt;!–&gt; A note as we begin working with integrals: This is only the beginning of some of the “outside-of-the-box” thinking skills Calculus II demands. It is common for there to be a learning curve as we transition from differentiation to integration, but don’t let this discourage you; everytime we solve these puzzles, we expand the limits of our mind, add new tools to our toolkit, and get a step closer to mathematical maturity.–&gt;\n\n\n6.1.5 Strategy 4: Logarithmic Terms\nIf there is a log term as part of a multiplication or division, we often let the entire term with the log be \\(u\\).\nExample 1 Evaluate \\(\\int \\frac{\\ln(x)+3}{x}\\,dx\\)\nIt may be tempting to choose \\(x\\) as our \\(u\\) — after all, we just covered this as our strategy for integrating non-reducible fractions. However, the log term in the numerator complicates things. A natural question arises: how do we choose \\(u\\) when the integral doesn’t obviously fit a pattern we recognize? A useful approach when you get stuck is to choose the “unknown” term—that is, the term for which we don’t have a clean antiderivative formula—as our \\(u\\). Remembering our antiderivative rules, we can recognize \\(\\ln(x)\\) as the unknown piece of this integrand. Since the constant \\(3\\) is simply added to \\(\\ln(x)\\) and the two are inseparable in the numerator, it is natural to treat the entire expression \\(\\ln(x) + 3\\) as our \\(u\\). As we will see, this choice keeps our substitution clean and allows all original variables to cancel neatly.\nStep 1: Set \\(u\\) equal to the chosen expression \\[u = \\ln(x)+3\\]\nStep 2: Differentiate with respect to \\(x\\) and isolate \\(dx\\) \\[\\frac{du}{dx} = \\frac{1}{x} \\implies dx = du \\cdot x\\]\nStep 3: Substitute \\(u\\) and \\(dx\\) into the integral \\[\\int \\frac{u}{x}\\, du \\cdot x\\]\nNotice the \\(x\\) terms cancel, leaving: \\[\\int u \\cdot du\\]\nStep 4: Integrate with respect to \\(u\\) \\[ \\frac{u^2}{2} + C\\]\nStep 5: Substitute the original expression back in for \\(u\\) \\[= \\frac{(\\ln(x)+3)^2}{2} + C \\implies =\\frac{1}{2}(\\ln(x)+3)^2+C\\]\nTherefore: \\[\\int \\frac{\\ln(x)+3}{x}\\,dx = \\frac{1}{2}(\\ln(x)+3)^2+C\\]",
     "crumbs": [
       "Calculus II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Integration Techniques</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Integration Techniques</span>"
     ]
   },
   {
     "objectID": "cal2/integration_techniques.html#integration-by-parts",
     "href": "cal2/integration_techniques.html#integration-by-parts",
-    "title": "5  Integration Techniques",
-    "section": "5.2 Integration by parts",
-    "text": "5.2 Integration by parts\nThink of this technique as a “reverse product rule”.",
+    "title": "6  Integration Techniques",
+    "section": "6.2 Integration by parts",
+    "text": "6.2 Integration by parts\nThink of this technique as a “reverse product rule”.",
     "crumbs": [
       "Calculus II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Integration Techniques</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Integration Techniques</span>"
     ]
   },
   {
     "objectID": "cal2/integration_techniques.html#trig-substitution",
     "href": "cal2/integration_techniques.html#trig-substitution",
-    "title": "5  Integration Techniques",
-    "section": "5.3 Trig-Substitution",
-    "text": "5.3 Trig-Substitution",
+    "title": "6  Integration Techniques",
+    "section": "6.3 Trig-Substitution",
+    "text": "6.3 Trig-Substitution",
     "crumbs": [
       "Calculus II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Integration Techniques</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Integration Techniques</span>"
     ]
   },
   {
     "objectID": "cal2/integration_techniques.html#partial-fraction-decomposition",
     "href": "cal2/integration_techniques.html#partial-fraction-decomposition",
-    "title": "5  Integration Techniques",
-    "section": "5.4 Partial Fraction Decomposition",
-    "text": "5.4 Partial Fraction Decomposition",
+    "title": "6  Integration Techniques",
+    "section": "6.4 Partial Fraction Decomposition",
+    "text": "6.4 Partial Fraction Decomposition",
     "crumbs": [
       "Calculus II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Integration Techniques</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Integration Techniques</span>"
     ]
   },
   {
     "objectID": "cal2/integration_techniques.html#improper-integrals",
     "href": "cal2/integration_techniques.html#improper-integrals",
-    "title": "5  Integration Techniques",
-    "section": "5.5 Improper Integrals",
-    "text": "5.5 Improper Integrals",
+    "title": "6  Integration Techniques",
+    "section": "6.5 Improper Integrals",
+    "text": "6.5 Improper Integrals",
     "crumbs": [
       "Calculus II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Integration Techniques</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Integration Techniques</span>"
     ]
   },
   {
     "objectID": "econ/optimization.html",
     "href": "econ/optimization.html",
-    "title": "6  Optimization",
+    "title": "7  Optimization",
     "section": "",
-    "text": "6.1 Key Functions in Economic Optimization\nOptimization is the process of finding the maximum or minimum value of a function in the context of an applied problem. In economics, this translates directly to questions every firm and consumer faces: How much should a firm produce to maximize profit? At what price is revenue maximized? How does a consumer allocate a fixed budget to maximize utility? The calculus tools developed in the previous chapter give us a precise, systematic way to answer these questions.",
+    "text": "7.1 Key Functions in Economic Optimization\nOptimization is the process of finding the maximum or minimum value of a function in the context of an applied problem. In economics, this translates directly to questions every firm and consumer faces: How much should a firm produce to maximize profit? At what price is revenue maximized? How does a consumer allocate a fixed budget to maximize utility? The calculus tools developed in the previous chapter give us a precise, systematic way to answer these questions.",
     "crumbs": [
       "Mathematical Economics",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Optimization</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optimization</span>"
     ]
   },
   {
     "objectID": "econ/optimization.html#key-functions-in-economic-optimization",
     "href": "econ/optimization.html#key-functions-in-economic-optimization",
-    "title": "6  Optimization",
+    "title": "7  Optimization",
     "section": "",
-    "text": "6.1.1 Cost Functions\n\n\n6.1.2 Revenue Functions\n\n\n6.1.3 Profit Functions",
+    "text": "7.1.1 Cost Functions\n\n\n7.1.2 Revenue Functions\n\n\n7.1.3 Profit Functions",
     "crumbs": [
       "Mathematical Economics",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Optimization</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optimization</span>"
     ]
   },
   {
     "objectID": "econ/optimization.html#marginal-analysis",
     "href": "econ/optimization.html#marginal-analysis",
-    "title": "6  Optimization",
-    "section": "6.2 Marginal Analysis",
-    "text": "6.2 Marginal Analysis\n\n6.2.1 Marginal Cost\n\n\n6.2.2 Marginal Revenue\n\n\n6.2.3 Marginal Profit",
+    "title": "7  Optimization",
+    "section": "7.2 Marginal Analysis",
+    "text": "7.2 Marginal Analysis\n\n7.2.1 Marginal Cost\n\n\n7.2.2 Marginal Revenue\n\n\n7.2.3 Marginal Profit",
     "crumbs": [
       "Mathematical Economics",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Optimization</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optimization</span>"
     ]
   },
   {
     "objectID": "econ/optimization.html#profit-maximization",
     "href": "econ/optimization.html#profit-maximization",
-    "title": "6  Optimization",
-    "section": "6.3 Profit Maximization",
-    "text": "6.3 Profit Maximization",
+    "title": "7  Optimization",
+    "section": "7.3 Profit Maximization",
+    "text": "7.3 Profit Maximization",
     "crumbs": [
       "Mathematical Economics",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Optimization</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optimization</span>"
     ]
   },
   {
     "objectID": "econ/optimization.html#the-role-of-constraints",
     "href": "econ/optimization.html#the-role-of-constraints",
-    "title": "6  Optimization",
-    "section": "6.4 The Role of Constraints",
-    "text": "6.4 The Role of Constraints\nTo be continued… optimization under constraints and an introduction to Lagrangian methods.",
+    "title": "7  Optimization",
+    "section": "7.4 The Role of Constraints",
+    "text": "7.4 The Role of Constraints\nTo be continued… optimization under constraints and an introduction to Lagrangian methods.",
     "crumbs": [
       "Mathematical Economics",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Optimization</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optimization</span>"
     ]
   }
 ]
