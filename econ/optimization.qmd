@@ -10,13 +10,30 @@ consumer allocate a fixed budget to maximize utility? The calculus tools
 developed in the previous chapter give us a precise, systematic way to 
 answer these questions.
 
+## A Note on the Following Sections {.unnumbered}
+The Mathematical Economics part of this math compendium should feel like the payoff from the previous calculus chapters. Those chapters established the mathematical foundation, and now we get to reap the rewards of our dedicated efforts by utilizing these tools in an applied context. This isn't meant to be an economics textbook though, so the following concepts will only be introduced as far as the math requires it. 
+The idea for this section is for us to see how the core models and theories of economics are really just applications built off of the math essentials we have explored thus far. By making this connection, it's my hope that we will realize that we can work our way to the answer of any economic question by falling back on our math skills (and a bit of imagination) to think through it. 
+
 ## Key Functions in Economic Optimization
 
-### Cost Functions
+Let $q$ denote the quantity of output produced. Then:
 
-### Revenue Functions
+- **Total Cost:** $C(q)$
+    - the total cost of producing $q$ units
+- **Total Revenue:** $R(q) = p \cdot q$ 
+    - price times quantity, where $p$ is the market price
+- **Profit:** $\pi(q) = R(q) - C(q)$ 
+    - the difference between revenue and cost
+- **Production:** $f(K, L)$  
+    - output as a function of capital $K$ and labor $L$
+- **Utility:** $U(x, y)$ 
+    - a consumer's satisfaction from consuming goods $x$ and $y$
+- **Demand:** $Q_d(p)$ 
+    - quantity demanded as a function of price; typically decreasing in $p$
+- **Supply:** $Q_s(p)$ 
+    - quantity supplied as a function of price; typically increasing in $p$
 
-### Profit Functions
+A particularly important production function in economics is the **Cobb-Douglas** form $f(K, L) = AK^\alpha L^\beta$, where $A$ is a productivity parameter and $\alpha$, $\beta$ are output elasticities of capital and labor respectively. Its mathematical properties make it especially well-suited for optimization and will be explored in depth in a dedicated section.
 
 ## Marginal Analysis
 
